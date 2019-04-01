@@ -59,3 +59,34 @@ body {
         font-size: 2rem;
     }
 }
+
+.confetti_board--triangle {
+    --position-x: 10px;
+    --position-y: 15px;
+    --initial-rotate: 30deg;
+    --rotate: 20deg;
+
+    transform-origin: 10px 15px;
+    transform: 
+        translate( var(--position-x), var(--position-y) )
+        scale(0.45)
+        rotate( calc( var(--initial-rotate) ) );
+    stroke-width: 4px;
+    animation: 300ms steps(2) 300ms infinite wiggle;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: 
+            translate( var(--position-x), var(--position-y) )
+            scale(0.45)
+            rotate( calc( var(--initial-rotate) - var(--rotate) ) );
+    }
+
+    100% {
+        transform: 
+            translate( var(--position-x), var(--position-y) )
+            scale(0.45)
+            rotate( calc( var(--initial-rotate) + var(--rotate) ) );
+    }
+}

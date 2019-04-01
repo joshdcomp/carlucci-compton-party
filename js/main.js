@@ -2,7 +2,7 @@ const svgNS = "http://www.w3.org/2000/svg"
 
 class Triangle {
     constructor({ triangleTemplate, coords: {x=0, y=0}={}, color }) {
-        this.position = {x, y}
+        this.position = { x, y }
         this.triangleTemplate = triangleTemplate
         this.color = color
         this.el = document.createElementNS(svgNS, 'path')
@@ -29,18 +29,20 @@ class Triangle {
     }
 
     render() {
-        clearInterval(this.flicker)
         const d =  this.triangleTemplate.getAttribute('d')
         const el = this.el
 
         el.setAttribute('d', d)
-        el.setAttribute('transform', this.setTransform(this.initialRotate))
-        el.setAttribute('transform-origin', '10px 15px')
-        el.setAttribute('style', `${this.color.fillRule}: ${this.color.value}; stroke-width: 4;`)
-
+        el.setAttribute('class', 'confetti_board--triangle')
+        el.setAttribute('style', 
+`
+${this.color.fillRule}: ${this.color.value};
+--position-x: ${this.position.x}px;
+--position-y: ${this.position.y}px;
+--initial-rotate: ${this.initialRotate}deg;
+`)
+        el.setAttribute('class', 'confetti_board--triangle')
         this.el = el
-
-        this.flicker = setInterval(function() {this.rotate()}.bind(this), 200)
         return this.el
     }
 
