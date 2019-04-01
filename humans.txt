@@ -1,0 +1,16 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Josh Compton -- Engineer, Suitor -- @joshdcomp
+    Kevin Braine -- Designer, Best Friend -- @joshdcomp
+
+# THANKS
+
+    Tom, Greg, Paul, Mike, Jon, Isaiah, Tia, Danielle, Amanda, Leah, Laura,
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    Apache Server Configs, jQuery, Modernizr, Normalize.css

@@ -1,0 +1,19 @@
+{
+  "name": "cc-party",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "test",
+    "dev": "nodemon --exec http-server ./"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "http-server": "^0.11.1",
+    "nodemon": "^1.18.10"
+  }
+}

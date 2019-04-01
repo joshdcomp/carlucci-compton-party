@@ -1,0 +1,3 @@
+on docload triangles should be placed at a random position and orientation (consider positioning be done as a matrix to ensure even distrobution) and should grow from zero to their full size
+after render, all triangles should 'wiggle' independently by alternating between plus and minus 10 degrees from their initial orientation 
+on window resize after 250ms, the program should re-evaluate the positioning of current triangles, and whether there needs to be more. Once the new layout of triangles is determined, the current triangles should animate to their new position and new triangles should grow from zero
