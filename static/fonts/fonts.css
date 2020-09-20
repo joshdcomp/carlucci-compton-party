@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Arquitecta';
+    src: url('arquitectastd-light-webfont.woff2') format('woff2'),
+         url('arquitectastd-light-webfont.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Arquitecta';
+    src: url('arquitectastd-lightitalic-webfont.woff2') format('woff2'),
+         url('arquitectastd-lightitalic-webfont.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'Arquitecta';
+    src: url('arquitectastd-medium-webfont.woff2') format('woff2'),
+         url('arquitectastd-medium-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Arquitecta';
+    src: url('arquitectastd-mediumitalic-webfont.woff2') format('woff2'),
+         url('arquitectastd-mediumitalic-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'Arquitecta';
+    src: url('arquitectastd-bold-webfont.woff2') format('woff2'),
+         url('arquitectastd-bold-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Arquitecta';
+    src: url('arquitectastd-bolditalic-webfont.woff2') format('woff2'),
+         url('arquitectastd-bolditalic-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+
+}
