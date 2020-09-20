@@ -1,0 +1,85 @@
+.cc-shapes {
+    margin: 0;
+}
+
+.cc-shapes--shape {
+    display: inline-block;
+    position: fixed;
+    min-height: 25px;
+    min-width: 25px;
+    // pointer-events: none;
+    
+    &.cc-shapes--shape-above_main {
+        z-index: var(--z-above_content);
+    }
+
+    .cc-shapes--shape_svg {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.cc-shapes--shape-size-10 {
+    width: 60px;
+    height: 60px;
+}
+
+.cc-shapes--shape-size-20 {
+    width: 100px;
+    height: 100px;
+}
+
+.cc-shapes--shape-size-30 {
+    width: 160px;
+    height: 160px;
+}
+
+.cc-shapes--shape-size-40 {
+    width: 210px;
+    height: 210px;
+}
+
+$colors: (
+    'bazooka',
+    'mintfoam',
+    'majorelle',
+    'coral',
+    'heinz',
+    'sol_lewit',
+    'sol_lewet',
+    'neon',
+    'slate',
+    'raincloud',
+);
+
+// main colors
+@each $color in $colors {
+    .cc-shapes-color-#{$color} {
+        .sg-shapes--shape_color_1 {
+            fill: var(--#{$color})
+        }
+    }
+}
+
+// composite combos
+@each $color in $colors {
+    // get a random value other than current color for alt color
+    $secondaryColors: remove($colors, $color);
+    // @debug "\a\a#{$secondaryColors}\a\a";
+
+    @each $secondaryColor in $secondaryColors {
+        $className: ".cc-shapes-composite-#{$color}-#{$secondaryColor}";
+        
+        @debug "\a\a#{$className}";
+
+        #{$className} {
+            .sg-shapes--shape_color_1 {
+                fill: var(--#{$color})
+            }
+    
+            .sg-shapes--shape_color_2 {
+                fill: var(--#{$secondaryColor})
+            }
+        }
+    }
+}

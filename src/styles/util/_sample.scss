@@ -1,0 +1,3 @@
+@function list_sample($elements...) {
+  @return nth($elements, random(length($elements)))
+}

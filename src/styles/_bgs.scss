@@ -77,6 +77,8 @@
 
 .cc-bg-neon {
     background-color: var(--neon);
+    
+    * { color: var(--slate); }
 
     &.cc-nav {
         background-color: transparent;

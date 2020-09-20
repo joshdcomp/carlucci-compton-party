@@ -1,16 +1,3 @@
-const getBGClassName = () => {
-    const bgs = [
-        'cc-bg-bazooka',
-        'cc-bg-mintfoam',
-        'cc-bg-majorelle',
-        'cc-bg-coral',
-        'cc-bg-heinz',
-        'cc-bg-sol_lewit',
-        'cc-bg-sol_lewet',
-        'cc-bg-slate',
-        'cc-bg-raincloud',
-    ]
-    const key = Math.floor(Math.random() * bgs.length)
-    return `${bgs[key]}`
-}
-export default getBGClassName
+import colors from "./colors"
+const _colors = colors.filter(c => ['neon', 'raincloud'].includes(c))
+export default () => `cc-bg-${_colors[Math.floor(Math.random() * _colors.length)]}`

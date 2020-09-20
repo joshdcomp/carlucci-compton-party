@@ -1,15 +1,4 @@
 import { sampleSize } from "lodash"
-const getBGSet = (n=1) => {
-    const bgs = [
-        'cc-bg-bazooka',
-        'cc-bg-mintfoam',
-        'cc-bg-majorelle',
-        'cc-bg-coral',
-        'cc-bg-heinz',
-        'cc-bg-sol_lewit',
-        'cc-bg-sol_lewet',
-        'cc-bg-slate',
-    ]
-    return sampleSize(bgs, n)
-}
-export default getBGSet
+import colors from './colors'
+const _colors = colors.filter(c => !['neon', 'raincloud'].includes(c))
+export default (n=1) => sampleSize(_colors.map(color => `cc-bg-${color}`), n)

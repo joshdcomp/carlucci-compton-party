@@ -2,6 +2,9 @@
     list-style: none;
     margin: 0;
     display: flex;
+    transform: scale(1);
+    z-index: var(--z-tiles);
+    position: relative;
 
     > .cc-tiles--tile {
         margin: 0; 

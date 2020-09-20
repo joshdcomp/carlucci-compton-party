@@ -1,5 +1,8 @@
 @import "./normalize";
 @import "./util/scale";
+@import "./util/sample";
+@import "./util/convert";
+@import "./util/remove";
 
 :root {
     --bazooka: #F4C4C6;
@@ -18,10 +21,12 @@
     --fw-600: 600;
 
     --z-content: 10;
+    --z-above_content: calc(var(--z-content) + 1);
+    --z-tiles: calc(var(--z-above_content) + 1);
 }
 
 body {
-    font-size: 16px;
+    font-size: $base_font_size;
     color: var(--slate);
 }
 
@@ -40,7 +45,7 @@ body, body * {
 @import "./normalize";
 @import "./text";
 @import "./tiles";
-// @import "./shapes";
+@import "./shapes";
 
 .cc-button {
     padding: .5rem 1rem;
@@ -56,39 +61,4 @@ body, body * {
 
 .cc-intro--title {
     user-select: none;
-}
-
-.cc-shapes {
-    margin: 0;
-}
-
-.cc-shapes--shape {
-    display: inline-block;
-    position: fixed;
-    min-height: 25px;
-    min-width: 25px;
-    
-    &.cc-shapes--shape-above_main {
-        z-index: calc(var(--z-content) + 1);
-    }
-}
-
-.cc-shapes--shape-size-10 {
-    width: 10px;
-    height: 10px;
-}
-
-.cc-shapes--shape-size-20 {
-    width: 30px;
-    height: 30px;
-}
-
-.cc-shapes--shape-size-30 {
-    width: 60px;
-    height: 60px;
-}
-
-.cc-shapes--shape-size-40 {
-    width: 100px;
-    height: 100px;
 }

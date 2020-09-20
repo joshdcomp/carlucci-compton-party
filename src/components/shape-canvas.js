@@ -2,17 +2,20 @@ import React from 'react'
 import _ from 'lodash'
 import classnames from 'classnames'
 
-import getBgClassname from "../utils/get-bg-classname"
+import getCompositeClassname from "../utils/get-composite-classname"
+import getShapeClassName from "../utils/get-shape-classname"
 import weightedLottery from "../utils/weighted-lottery"
 import rand from "../utils/rand.js"
 
+import * as rawShapes from "../components/shapes"
 
+const { Composites, ...Shapes } = rawShapes
 
 const ShapeCanvas = ({layoutRef}) => {
     // all values are evaluated clockwise starting top left for matrix and top for cardinal directions
     // offset values are relative to top and left
-    const cornerShapes = 10
-    const middleShapes = 5
+    const cornerShapes = rand(6, 8)
+    const middleShapes = rand(1, 3)
     const outBuff = 24
     const inBuff = outBuff/2
 
@@ -23,23 +26,58 @@ const ShapeCanvas = ({layoutRef}) => {
     const minsX = [0, 1, 2, 2, 2, 1, 0, 0]
 
     const sizePresets = [
-        {
-            px: 10,
-            className: 'cc-shapes--shape-size-10'
-        },
-        {
-            px: 30,
-            className: 'cc-shapes--shape-size-20'
-        },
-        {
-            px: 60,
-            className: 'cc-shapes--shape-size-30'
-        },
-        {
-            px: 100,
-            className: 'cc-shapes--shape-size-40'
-        },
+        [
+            {
+                px: 60,
+                className: 'cc-shapes--shape-size-10'
+            },
+            5
+        ],
+        [
+            {
+                px: 100,
+                className: 'cc-shapes--shape-size-20'
+            },
+            10
+        ],
+        [
+            {
+                px: 160,
+                className: 'cc-shapes--shape-size-30'
+            },
+            8
+        ],
+        [
+            {
+                px: 210,
+                className: 'cc-shapes--shape-size-40'
+            },
+            4
+        ],
     ]
+
+    // lol this is insanity
+    const shapeWeight = 2
+    const compositeWeight = 1
+    const weightedShapes = _.reduce(
+        Shapes,
+        (acc, Component, displayName) => {
+            acc.push([ {displayName, Component}, shapeWeight ])
+            return acc
+        }, 
+        []
+    ).concat(_.reduce(
+        Composites,
+        (acc, Component, displayName) => {
+            acc.push([ {displayName, Component}, compositeWeight ])
+            return acc
+        },
+        []
+    ))
+    const getClassnameFor = {
+        shape: getShapeClassName,
+        composite: getCompositeClassname
+    }
 
     const viewport = {
         width: window.innerWidth,
@@ -81,7 +119,7 @@ const ShapeCanvas = ({layoutRef}) => {
         }
 
         const cellShapes = [...Array(cellShapeCount).keys()].map((__, j) => {
-            const shapeSize = _.sample(sizePresets)
+            const shapeSize = weightedLottery(sizePresets)
 
             // 3:1 against a given item appearing above the main content
             const isAbove = weightedLottery([ [false, 3], [true, 1] ])
@@ -99,12 +137,12 @@ const ShapeCanvas = ({layoutRef}) => {
                     const isLeft = (buffX[0] > buffX[1])
 
                     if (isTop) {
-                        yMin = layoutMainRect.top
-                        yMax = layoutMainRect.top + layoutMainPadding - shapeSize.px - 15
+                        yMin = layoutMainRect.top - shapeSize.px
+                        yMax = layoutMainRect.top + layoutMainPadding - shapeSize.px - 30
                         
                         xMin = isLeft
                             // top left
-                            ? layoutMainRect.left - layoutMainPadding + shapeSize.px
+                            ? layoutMainRect.left - layoutMainPadding
                             // top right
                             : layoutMainRect.right - layoutMainPadding + shapeSize.px
                         
@@ -116,7 +154,7 @@ const ShapeCanvas = ({layoutRef}) => {
                         
                     // bottom
                     } else {
-                        yMin = layoutMainRect.bottom - layoutMainPadding + buffY[1]
+                        yMin = layoutMainRect.bottom - layoutMainPadding
                         yMax = layoutMainRect.bottom - 2 // just want to avoid tension from having something flush with the border
 
                         xMin = isLeft
@@ -141,8 +179,8 @@ const ShapeCanvas = ({layoutRef}) => {
 
                     switch (0) {
                         case middleBuffers[directions.top]:
-                            yMin = layoutMainRect.top
-                            yMax = layoutMainRect.top + layoutMainPadding - shapeSize.px - 15
+                            yMin = layoutMainRect.top - 130
+                            yMax = layoutMainRect.top - shapeSize.px - 30
 
                             xMin = x.min
                             xMax = x.max
@@ -152,13 +190,13 @@ const ShapeCanvas = ({layoutRef}) => {
                             yMin = y.min
                             yMax = y.max
 
-                            xMin = layoutMainRect.right - layoutMainPadding
-                            xMax = layoutMainRect.right - shapeSize.px
+                            xMin = layoutMainRect.right - layoutMainPadding + 20
+                            xMax = layoutMainRect.right + layoutMainPadding
                             break
 
                         case middleBuffers[directions.bottom]:
                             yMin = layoutMainRect.bottom - layoutMainPadding
-                            yMax = layoutMainRect.bottom + layoutMainPadding - shapeSize.px
+                            yMax = layoutMainRect.bottom + layoutMainPadding - shapeSize.px + 20
 
                             xMin = x.min
                             xMax = x.max
@@ -173,20 +211,30 @@ const ShapeCanvas = ({layoutRef}) => {
                             break
                     }
                 }
-
+                console.log({yMin, yMax, layoutMainRect, isCorner})
                 pos['top'] = rand(yMin, yMax)
                 pos['left'] = rand(xMin, xMax)
 
             } else {
-                pos['top'] = rand(y.min, y.max) - buffY[0]
-                pos['left'] = rand(x.min, x.max) - buffX[0]
+                pos['top'] = rand(y.min, y.max) - buffY[0] - 10
+                pos['left'] = rand(x.min, x.max) - buffX[0] - 10
             }
+
+            const { displayName, Component } = weightedLottery(weightedShapes)
+
+            const shapeClassname = displayName.includes('Composite')
+                ? getClassnameFor.composite()
+                : getClassnameFor.shape()
             
             const classes = classnames(
                 'cc-shapes--shape',
-                getBgClassname(),
+                displayName,
+                shapeClassname,
                 shapeSize.className,
-                { 'cc-shapes--shape-above_main': isAbove && layoutMain }
+                { 
+                    'cc-shapes--shape-above_main': isAbove && layoutMain,
+                    'isCorner' : isCorner,
+                }
             )
             
             return (
@@ -194,7 +242,7 @@ const ShapeCanvas = ({layoutRef}) => {
                     className={classes}
                     style={{...pos,}}
                     key={`shape-${i}-${j}`}
-                ></span>
+                ><Component /></span>
             )
         })
         acc = acc.concat(cellShapes)
