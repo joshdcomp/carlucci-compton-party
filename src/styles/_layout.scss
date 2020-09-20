@@ -1,0 +1,57 @@
+.cc-layout {
+    --title-color: var(--coral);
+
+    position: relative;
+    display: flex; 
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+
+    .cc-layout--card {
+        color: var(--majorelle);
+    }
+
+    .cc-layout--inner {
+        max-width: 75vw;
+        min-width: 720px;
+        position: relative;
+    }
+    
+    .cc-layout--main {
+        background-color: white;
+        border: solid thin var(--mintfoam);
+        z-index: var(--z-content);
+        padding: 75px;
+    }
+
+    .cc-layout--nav {
+        position: absolute;
+        z-index: 200;
+    }
+
+    .cc-layout--title {
+        color: var(--title-color);
+    }
+    
+    .cc-layout--title_home_link {
+        display: inline-block;
+        width: 42px;
+        height: 42px;
+        padding: 5px;
+        margin-right: 5px;
+        border-radius: 100px;
+        vertical-align: bottom;
+
+        path {
+            stroke: var(--title-color);
+        }
+
+        &:hover {
+            background-color: var(--title-color);
+
+            path {
+                stroke: white;
+            }
+        }
+    }
+}

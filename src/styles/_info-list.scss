@@ -1,0 +1,19 @@
+.cc-info_list {
+    list-style: none;
+    margin: 0;
+
+    li {
+        margin: 0;
+        line-height: 20px;
+        color: white;
+    }
+
+    strong {
+        font-weight: var(--fw-500);
+    }
+
+    span {
+        font-weight: var(--fw-200);
+        margin-left: 3px;
+    }
+}

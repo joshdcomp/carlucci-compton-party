@@ -1,0 +1,107 @@
+.cc-nav {
+    height: 220px;
+    width: 220px;
+    top: 0;
+    right: 0;
+    transform: translate(100px, -90px);
+
+    --dimensionTiming: cubic-bezier(0.25, 0.1, 0.25, 1.0);
+    --dimensionDuration: 150ms;
+
+    transition: height var(--dimensionDuration) var(--dimensionTiming), 
+                width var(--dimensionDuration) var(--dimensionTiming),
+                transform 150ms ease-in;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0; 
+        left: 0;
+        background-color: inherit;
+        clip-path: url(#clip-path-blob-1);
+    }
+
+    .cc-nav--trigger {
+        display: block;
+        width: 30px;
+        height: 30px;
+        appearance: none;
+        background: none;
+        border: none;
+        padding: 0;
+        position: absolute;
+        top: 75%;
+        left: 15%;
+        cursor: pointer;
+        transition: top 100ms ease-in,
+                    left 100ms ease-in;
+
+        &:focus,
+        &:active {
+            outline: none;
+            border: none;
+        }
+
+        &:hover svg path {
+            fill: #f1f1f1;
+            stroke: #f1f1f1;
+        }
+
+        &:active svg path {
+            fill: #e0e0e0;
+            stroke: #e0e0e0;
+        }
+
+        svg {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            
+            path {
+                fill: white;
+                stroke: white;
+            }
+        }
+    }
+
+    .cc-nav--trigger_icon_close {
+        display: none;
+        visibility: hidden;
+    }
+
+    .cc-nav--content {
+        display: none;
+    }
+
+    &.cc-nav-is_open {
+        height: 500px;
+        width: 500px;
+        transform: translate(20%, -20%);
+
+        .cc-nav--trigger {
+            top: 84%;
+            left: 12%;
+        }
+
+        .cc-nav--trigger_icon_open {
+            display: none;
+            visibility: hidden;
+        }
+
+        .cc-nav--trigger_icon_close {
+            display: block;
+            visibility: visible;
+        }
+
+        .cc-nav--content {
+            display: block;
+            top: 24%;
+            left: 24%;
+            width: 55%;
+            height: 50%;
+        }
+    }
+}

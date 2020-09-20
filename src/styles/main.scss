@@ -1,0 +1,94 @@
+@import "./normalize";
+@import "./util/scale";
+
+:root {
+    --bazooka: #F4C4C6;
+    --mintfoam: #81CA9C;
+    --majorelle: #007AC0;
+    --coral: #F37444;
+    --heinz: #F15F68;
+    --sol_lewit: #A4DDEB;
+    --sol_lewet: #8CC7ED;
+    --neon: #FFF200;
+    --slate: #737e94;
+    --raincloud: #858fa2;
+
+    --fw-200: 200;
+    --fw-500: 500;
+    --fw-600: 600;
+
+    --z-content: 10;
+}
+
+body {
+    font-size: 16px;
+    color: var(--slate);
+}
+
+body, body * {
+    font-family: 'Arquitecta', sans-serif;
+    position: relative;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+@import "./bgs";
+@import "./clips";
+@import "./info-list";
+@import "./layout";
+@import "./nav";
+@import "./normalize";
+@import "./text";
+@import "./tiles";
+// @import "./shapes";
+
+.cc-button {
+    padding: .5rem 1rem;
+    display: inline-block;
+    border-radius: 15px 10px;
+    color: white;
+    border: solid 2px white;
+}
+
+.cc-page_break {
+    margin: 64px 0;
+}
+
+.cc-intro--title {
+    user-select: none;
+}
+
+.cc-shapes {
+    margin: 0;
+}
+
+.cc-shapes--shape {
+    display: inline-block;
+    position: fixed;
+    min-height: 25px;
+    min-width: 25px;
+    
+    &.cc-shapes--shape-above_main {
+        z-index: calc(var(--z-content) + 1);
+    }
+}
+
+.cc-shapes--shape-size-10 {
+    width: 10px;
+    height: 10px;
+}
+
+.cc-shapes--shape-size-20 {
+    width: 30px;
+    height: 30px;
+}
+
+.cc-shapes--shape-size-30 {
+    width: 60px;
+    height: 60px;
+}
+
+.cc-shapes--shape-size-40 {
+    width: 100px;
+    height: 100px;
+}

@@ -1,0 +1,87 @@
+:root {
+    --c-magenta: #D42F81;
+    --c-cyan: #5FC6F4;
+    --c-gold: #FF9B42;
+}
+
+
+iframe .registry-header > h3 {
+    color: blue;
+}
+
+#template-triangle {
+    position: absolute;
+    opacity: 0;
+    visibility: collapse;
+    z-index: -1;
+}
+
+.confetti_container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+.confetti_board {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+
+.confetti_board path {
+    position: relative;
+    fill: none;
+}
+
+.message {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -100%);
+    color: #333;
+    z-index: 1;
+    padding: 2.5rem 3rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+@media screen and (min-width: 38rem) {
+    .message {
+        font-size: 2rem;
+    }
+}
+
+.confetti_board--triangle {
+    --position-x: 10px;
+    --position-y: 15px;
+    --initial-rotate: 30deg;
+    --rotate: 20deg;
+
+    transform-origin: 10px 15px;
+    transform: 
+        translate( var(--position-x), var(--position-y) )
+        scale(0.45)
+        rotate( calc( var(--initial-rotate) ) );
+    stroke-width: 4px;
+    animation: 300ms steps(2) 300ms infinite wiggle;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: 
+            translate( var(--position-x), var(--position-y) )
+            scale(0.45)
+            rotate( calc( var(--initial-rotate) - var(--rotate) ) );
+    }
+
+    100% {
+        transform: 
+            translate( var(--position-x), var(--position-y) )
+            scale(0.45)
+            rotate( calc( var(--initial-rotate) + var(--rotate) ) );
+    }
+}
