@@ -65,12 +65,9 @@ $colors: (
 @each $color in $colors {
     // get a random value other than current color for alt color
     $secondaryColors: remove($colors, $color);
-    // @debug "\a\a#{$secondaryColors}\a\a";
 
     @each $secondaryColor in $secondaryColors {
         $className: ".cc-shapes-composite-#{$color}-#{$secondaryColor}";
-        
-        @debug "\a\a#{$className}";
 
         #{$className} {
             .sg-shapes--shape_color_1 {
