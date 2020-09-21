@@ -6,6 +6,11 @@
         margin: 0;
         line-height: 20px;
         color: white;
+
+        * {
+            font-size: type-scale(3);
+            line-height: 1.5;
+        }
     }
 
     strong {

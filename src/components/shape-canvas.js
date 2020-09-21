@@ -209,11 +209,12 @@ const ShapeCanvas = ({layoutRef}) => {
                             xMin = layoutMainRect.left - shapeSize.px
                             xMax = layoutMainRect.left + layoutMainPadding - shapeSize.px
                             break
+                        default:
                     }
                 }
-                console.log({yMin, yMax, layoutMainRect, isCorner})
-                pos['top'] = rand(yMin, yMax)
-                pos['left'] = rand(xMin, xMax)
+
+                pos['top'] = rand(yMin, yMax) - buffY[0]
+                pos['left'] = rand(xMin, xMax) - buffX[0]
 
             } else {
                 pos['top'] = rand(y.min, y.max) - buffY[0] - 10

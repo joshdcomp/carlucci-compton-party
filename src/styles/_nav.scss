@@ -76,6 +76,33 @@
         display: none;
     }
 
+    .cc-nav--list {
+        list-style: none;
+        margin: 0 0 30px;
+    }
+
+    .cc-nav--item {
+        margin: 0 0 5px;
+
+        .cc-nav--link {
+            color: white;
+            text-decoration: none;
+            font-size: type-scale(4);
+            line-height: 1;
+            padding: 2px;
+
+            &:hover, 
+            &.cc-nav--link-is_active {
+                border-bottom: solid thin white;
+            }
+
+            svg {
+                height: 100%;
+                display: inline-block;
+            }
+        }
+    }
+
     &.cc-nav-is_open {
         height: 500px;
         width: 500px;
@@ -99,7 +126,7 @@
         .cc-nav--content {
             display: block;
             top: 24%;
-            left: 24%;
+            left: 20%;
             width: 55%;
             height: 50%;
         }

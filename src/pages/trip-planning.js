@@ -3,11 +3,10 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import getClipClassName from "../utils/get-clip-classname"
 
-import IconHome from "../components/icons/home";
+import { Home } from "../components/icons";
 
-const Registry = () => {
+const TripPlanning = () => {
 
   return (
     <>
@@ -15,7 +14,7 @@ const Registry = () => {
       
       <Layout>
         <h1 className="cc-text-header-20 cc-layout--title">
-          <Link to="/" className="cc-layout--title_home_link"><IconHome /></Link>
+          <Link to="/" className="cc-layout--title_home_link"><Home /></Link>
           Planning
         </h1>
 
@@ -25,4 +24,4 @@ const Registry = () => {
   )
 }
 
-export default Registry
+export default TripPlanning

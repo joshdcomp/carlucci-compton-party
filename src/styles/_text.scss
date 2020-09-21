@@ -1,9 +1,18 @@
+h1, h2, h3, p {
+    max-width: 550px;
+}
+
 .cc-text-header-20 {
-    font-size: carbon--get-type-size(10);
+    font-size: var(--fs-header-20);
     font-weight: var(--fw-600);
 }
 
 .cc-text-body-20 {
-    font-size: carbon--get-type-size(7);
+    font-size: var(--fs-body-20);
+    font-weight: var(--fw-200);
+}
+
+.cc-text-body-10 {
+    font-size: var(--fs-body-10);
     font-weight: var(--fw-200);
 }

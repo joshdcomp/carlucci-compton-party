@@ -5,11 +5,25 @@
     transform: scale(1);
     z-index: var(--z-tiles);
     position: relative;
+    margin-top: 50px;
 
     > .cc-tiles--tile {
         margin: 0; 
         line-height: 1;
         flex: 1;
+        transform: scale(1);
+
+        --transformDuration: 90ms;
+        --transformTiming: cubic-bezier(0.25, 0.1, 0.25, 1.0);
+        transition: transform var(--transformDuration) var(--transformTiming);
+
+        &:hover {
+            transform: scale(1.08)
+        }
+        
+        &:active {
+            transform: scale(1.06)
+        }
     }
 
     .cc-tiles--tile + .cc-tiles--tile {
@@ -23,5 +37,28 @@
         display: block;
         width: 100%;
         height: 100%;
-    }   
+        color: white;
+        text-decoration: none;
+        text-align: center;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        &.cc-tiles--tile_link-logo svg {
+            fill: white;
+        }
+    }
+
+    .cc-tiles--title {
+        margin-bottom: 30px;
+    }
+
+    .cc-tiles--icon {
+        width: 50px;
+        height: 50px;
+        display: block;
+        margin: 20px auto 10px;
+    }
 }

@@ -16,6 +16,10 @@
     --slate: #737e94;
     --raincloud: #858fa2;
 
+    --fs-header-20: #{type-scale(10)};
+    --fs-body-20: #{type-scale(6)};
+    --fs-body-10: #{type-scale(4)};
+
     --fw-200: 200;
     --fw-500: 500;
     --fw-600: 600;
@@ -30,11 +34,17 @@ body {
     color: var(--slate);
 }
 
-body, body * {
+body {
     font-family: 'Arquitecta', sans-serif;
     position: relative;
     font-size: 16px;
     box-sizing: border-box;
+    
+    * {
+        font-family: 'Arquitecta', sans-serif;
+        position: relative;
+        box-sizing: border-box;
+    }
 }
 
 @import "./bgs";

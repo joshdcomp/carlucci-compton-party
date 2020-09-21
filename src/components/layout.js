@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { createContext, useState, useCallback } from "react"
+import React, { createContext, useState, useCallback, useEffect } from "react"
 import PropTypes from "prop-types"
 
 import "../styles/main.scss"
@@ -29,6 +29,11 @@ const Layout = ({ children }) => {
 
   const layoutRef = useCallback(node => {
     setMainEl(node)
+  }, [])
+
+  useEffect(() => {
+    const interval = setInterval(shuffle, 1500)
+    return () => { clearInterval(interval)}
   })
 
   return (

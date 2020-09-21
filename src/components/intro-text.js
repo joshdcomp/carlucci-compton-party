@@ -1,18 +1,25 @@
 import React from 'react'
-// import { Link } from 'gatsby'
-
-import useBgSet from '../utils/use-bg-set'
 
 const IntroTiles = () => {
-    const { shuffle } = useBgSet()
-
     return (
         <>
-            <h1 className="cc-text-header-20 cc-layout--title" onClick={() => shuffle()}>Josh &amp; Michele</h1>
+            <h1 className="cc-text-header-20 cc-layout--title">
+                Michele &amp; Josh
+            </h1>
 
             <p className="cc-text-body-20">We're getting married!</p>
 
             <p className="cc-text-body-20">Save the date for our wedding celebration</p>
+
+            <p className="cc-text-body-10">
+              <strong>When:</strong>&nbsp;
+              <span>May 8, 2020</span>
+            </p>
+
+            <p className="cc-text-body-10">
+              <strong>Where:</strong>&nbsp;
+              <span>The Box House Hotel</span>
+            </p>
         </>
     )
 }

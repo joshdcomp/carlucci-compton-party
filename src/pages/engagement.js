@@ -1,5 +1,4 @@
 import React, { useEffect } from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -46,7 +45,7 @@ const SecondPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <object id="template-triangle" type="image/svg+xml" data="/img/triangle-fill.svg"></object>
+      <object id="template-triangle" aria-label="template svg" type="image/svg+xml" data="/img/triangle-fill.svg"></object>
       <h1 className="message">she said yes!</h1>
       <section className="confetti_container">
         <svg

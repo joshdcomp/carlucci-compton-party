@@ -2,15 +2,22 @@ import React, { useState } from "react"
 import classnames from 'classnames'
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import getBGClassName from "../utils/get-bg-classname"
 
-import IconMap from "../components/icons/menu"
-import IconClose from "../components/icons/close"
+import { Menu, Close } from '../components/icons'
+
 import useBgSet from "../utils/use-bg-set";
 
-const Nav = ({bgClass}) => {
+const Nav = () => {
   const [ navIsOpen, setNavOpen ] = useState(false)
   const { nav:navBg } = useBgSet()
+
+  const isPartiallyActive = ({
+    isPartiallyCurrent
+  }) => {
+    return isPartiallyCurrent
+      ? { className: "cc-nav--link cc-nav--link-is_active" }
+      : {}
+  }
 
   const navClasses = classnames(
     'cc-layout--nav cc-nav', 
@@ -23,24 +30,41 @@ const Nav = ({bgClass}) => {
         className="cc-nav--trigger"
         onClick={() => setNavOpen(!navIsOpen)}
       >
-          <span className="cc-nav--trigger_icon_open"><IconMap /></span>
-          <span className="cc-nav--trigger_icon_close"><IconClose /></span>
+          <span className="cc-nav--trigger_icon_open"><Menu /></span>
+          <span className="cc-nav--trigger_icon_close"><Close /></span>
       </button>
       <div className="cc-nav--content">
         <ul className="cc-nav--list">
           <li className="cc-nav--item">
-            <Link to="/">about us</Link>
+            <Link
+              to="/about-us"
+              className="cc-nav--link"
+              getProps={isPartiallyActive}
+            >about us</Link>
           </li>
           <li className="cc-nav--item">
-            <Link to="/">wedding info</Link>
+            <Link
+              to="/trip-planning"
+              className="cc-nav--link"
+              getProps={isPartiallyActive}
+            >trip planning</Link>
           </li>
           <li className="cc-nav--item">
-            <Link to="/">registry</Link>
+            <Link
+              to="/registry"
+              className="cc-nav--link"
+              getProps={isPartiallyActive}
+            >registry</Link>
           </li>
           <li className="cc-nav--item">
-            <Link to="/">contact</Link>
+            <Link
+              to="/contact"
+              className="cc-nav--link"
+              getProps={isPartiallyActive}
+            >contact</Link>
           </li>
         </ul>
+
         <section className={`cc-layout--card cc-layout--card-info`}>
           <ul className="cc-info_list">
             <li className="cc-info_list--li">
@@ -48,22 +72,21 @@ const Nav = ({bgClass}) => {
               <span>May 8, 2020</span>
             </li>
   
-            <li>
+            <li className="cc-info_list--li">
               <strong>Where:</strong>
               <span>The Box House Hotel</span>
             </li>
   
-            <li>
+            <li className="cc-info_list--li">
               <strong>Who:</strong>
               <span>Michele Carlucci &amp; Josh Compton</span>
             </li>
   
-            <li>
+            <li className="cc-info_list--li">
               <strong>What:</strong>
               <span>Party!</span>
             </li>
           </ul>
-          <Link to={`/info`} className="cc-button">Wedding info</Link>
         </section>
       </div>
     </nav>

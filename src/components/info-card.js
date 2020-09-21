@@ -25,7 +25,6 @@ const InfoCard = ({ siteTitle }) => (
         <span>Party!</span>
       </li>
     </ul>
-    <Link to={`/info`} className="cc-button">Wedding info</Link>
   </section>
 )
 
