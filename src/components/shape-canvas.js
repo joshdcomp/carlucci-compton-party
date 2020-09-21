@@ -12,6 +12,7 @@ import * as rawShapes from "../components/shapes"
 const { Composites, ...Shapes } = rawShapes
 
 const ShapeCanvas = ({layoutRef}) => {
+    if (typeof window === `undefined`) return
     // all values are evaluated clockwise starting top left for matrix and top for cardinal directions
     // offset values are relative to top and left
     const cornerShapes = rand(6, 8)
