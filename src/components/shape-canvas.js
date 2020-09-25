@@ -11,7 +11,8 @@ import * as rawShapes from "../components/shapes"
 
 const { Composites, ...Shapes } = rawShapes
 
-const ShapeCanvas = ({layoutRef}) => {
+const ShapeCanvas = ({layoutRef, reRender}) => {
+    if (!reRender) return null
     if (typeof window === `undefined`) return null
     // all values are evaluated clockwise starting top left for matrix and top for cardinal directions
     // offset values are relative to top and left

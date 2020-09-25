@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 
 import "../styles/main.scss"
 
+import CovidBanner from "./covid-banner"
 import Nav from "./nav"
 import ClippingPaths from "./clipping-paths"
 import ShapeCanvas from "./shape-canvas";
@@ -20,12 +21,13 @@ export const BgContext = createContext({ nav: '', tiles: [], shuffle: () => { } 
 
 const Layout = ({ children }) => {
   const stateVal = (set) => ({ nav: set.shift(), tiles: set })
-
   const [bgs, setBgs] = useState(stateVal(getBGSet(4)))
+
+  const [reRender, doRerender] = useState({ hash: Math.random() })
 
   const [mainEl, setMainEl] = useState(false)
 
-  const shuffle = () => setBgs(stateVal(getBGSet(4)))
+  const shuffle = () => { doRerender({ hash: Math.random() }) }
 
   const layoutRef = useCallback(node => {
     setMainEl(node)
@@ -39,6 +41,7 @@ const Layout = ({ children }) => {
   return (
     <BgContext.Provider value={{ shuffle, ...bgs }}>
       <ClippingPaths />
+      <CovidBanner />
       <div className="cc-layout">
         <div className="cc-layout--inner">
           <Nav />
@@ -47,7 +50,7 @@ const Layout = ({ children }) => {
             {children}
           </main>
 
-          <ShapeCanvas layoutRef={mainEl} />
+          <ShapeCanvas layoutRef={mainEl} reRender={reRender} />
         </div>
       </div>
     </BgContext.Provider>
