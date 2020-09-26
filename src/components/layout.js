@@ -22,7 +22,7 @@ export const BgContext = createContext({ nav: '', tiles: [], shuffle: () => { } 
 
 const Layout = ({ children, contentPage }) => {
   const bgAssign = (set) => ({ nav: set.shift(), tiles: set })
-  const bgs = bgAssign( getBGSet(4) )
+  const [bgs] = useState(bgAssign(getBGSet(4)))
 
   const [reRender, doRerender] = useState({ hash: Math.random() })
 
