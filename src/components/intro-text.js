@@ -3,7 +3,7 @@ import React from 'react'
 const IntroTiles = () => {
     return (
         <>
-            <h1 className="cc-text-header-20 cc-layout--title">
+            <h1 className="cc-text-header-30 cc-layout--title">
                 Michele &amp; Josh
             </h1>
 
@@ -13,7 +13,7 @@ const IntroTiles = () => {
 
             <p className="cc-text-body-10">
               <strong>When:</strong>&nbsp;
-              <span>May 8, 2020</span>
+              <span>May 8, 2021</span>
             </p>
 
             <p className="cc-text-body-10">

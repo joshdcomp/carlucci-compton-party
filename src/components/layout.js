@@ -7,6 +7,7 @@
 
 import React, { createContext, useState, useCallback, useEffect } from "react"
 import PropTypes from "prop-types"
+import classnames from "classnames"
 
 import "../styles/main.scss"
 
@@ -19,9 +20,9 @@ import getBGSet from "../utils/get-bg-set"
 
 export const BgContext = createContext({ nav: '', tiles: [], shuffle: () => { } })
 
-const Layout = ({ children }) => {
-  const stateVal = (set) => ({ nav: set.shift(), tiles: set })
-  const [bgs, setBgs] = useState(stateVal(getBGSet(4)))
+const Layout = ({ children, contentPage }) => {
+  const bgAssign = (set) => ({ nav: set.shift(), tiles: set })
+  const bgs = bgAssign( getBGSet(4) )
 
   const [reRender, doRerender] = useState({ hash: Math.random() })
 
@@ -38,11 +39,16 @@ const Layout = ({ children }) => {
     return () => { clearInterval(interval)}
   })
 
+  const wrapperClasses = classnames(
+    'cc-layout',
+    { 'cc-layout-content_page': contentPage }
+  )
+
   return (
     <BgContext.Provider value={{ shuffle, ...bgs }}>
       <ClippingPaths />
       <CovidBanner />
-      <div className="cc-layout">
+      <div className={wrapperClasses}>
         <div className="cc-layout--inner">
           <Nav />
 

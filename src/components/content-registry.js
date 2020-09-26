@@ -3,21 +3,22 @@ import { Link } from 'gatsby'
 import getClipClassName from '../utils/get-clip-classname'
 
 import useBgSet from '../utils/use-bg-set'
-import { Home } from '../components/icons'
 import { BlackGirlsCode } from "../components/logos/black-girls-code";
 import { TrevorProject } from "../components/logos/trevor-project";
 import { UnionOfConcernedScientists } from "../components/logos/union-of-concerned-scientists";
+import PageTitle from './page-title'
 
 const RegistryContent = () => {
     const { tiles } = useBgSet()
 
     return (<>
-        <h1 className="cc-text-header-20 cc-layout--title">
-            <Link to="/" className="cc-layout--title_home_link"><Home /></Link>
-            Registry
-        </h1>
+        <PageTitle
+            title="Registry"
+        />
 
-        <p className="cc-text-body-10">Registry coming soon, but in the meantime these folks could use your support&hellip;consider donating part or all of your planned wedding gift to these organizations:</p>
+        <p className="cc-text-body-10">
+            Registry coming soon, but in the meantime these folks could use your support&hellip;consider donating part or all of your planned wedding gift to these organizations:
+        </p>
 
         <ul className="cc-tiles">
             <li className={`cc-tiles--tile ${getClipClassName()} ${tiles[0]}`}>

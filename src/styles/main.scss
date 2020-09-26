@@ -16,7 +16,11 @@
     --slate: #737e94;
     --raincloud: #858fa2;
 
-    --fs-header-20: #{type-scale(10)};
+    --fs-header-30: #{type-scale(10)};
+    --fs-header-20: #{type-scale(8)};
+    --fs-header-10: #{type-scale(6)};
+    --fs-header-5: #{type-scale(5)};
+    --fs-header-1: #{type-scale(4)};
     --fs-body-20: #{type-scale(6)};
     --fs-body-10: #{type-scale(4)};
 
@@ -28,6 +32,11 @@
     --z-above_content: calc(var(--z-content) + 1);
     --z-covid_banner: calc(var(--z-above_content) + 10);
     --z-tiles: calc(var(--z-above_content) + 1);
+
+    --color-header-30: var(--coral);
+    --color-header-20: var(--majorelle);
+    --color-header-10: var(--slate);
+    --color-text: #6c6c71;
 }
 
 body {
@@ -45,6 +54,7 @@ body {
         font-family: 'Arquitecta', sans-serif;
         position: relative;
         box-sizing: border-box;
+        color: var(--color-text);
     }
 }
 
@@ -57,6 +67,8 @@ body {
 @import "./text";
 @import "./tiles";
 @import "./shapes";
+@import "./banner";
+@import "./slug-header";
 
 .cc-button {
     padding: .5rem 1rem;
@@ -74,59 +86,29 @@ body {
     user-select: none;
 }
 
-.cc-banner {
-    position: absolute; 
-    background-color: var(--heinz);
-    z-index: var(--z-covid_banner);
-    display: block;
-    width: 100%;
-    padding: 15px 0;
-    color: white;
-
-    .cc-banner--inner {
-        width: 75vw;
-        min-width: 720px;
-        margin: auto;
-    }
-
-    .cc-banner--title {
-        font-size: type-scale(3);
-        margin-bottom: 5px;
-        cursor: pointer;
-
-        &:focus {
-            border: none;
-            outline: none;
-        }
-    }
-
-    .cc-banner--title_icon {
-        height: type-scale(3);
-        width: type-scale(3);
-        display: inline-block;
-        vertical-align: bottom;
-        margin-right: 5px;
-    }
-
-    .cc-banner--message {
-        font-size: type-scale(3);
-        font-weight: var(--fw-200);
-        line-height: 1.2;
-        margin-bottom: 0;
-        display: none;
-        visibility: collapse;
-        margin-left: type-scale(3) + rem(5px);
-    }
-    
-    &.cc-banner-is_open .cc-banner--message {
-        display: block;
-        visibility: visible;
-    }
-}
 
 .cc-section {
     p {
-        font-size: type-scale(4);
+        font-size: type-scale(5);
+        line-height: 1.4;
         font-weight: var(--fw-200);
     }
+
+    a {
+        color: var(--majorelle);
+        padding-bottom: 2px;
+        text-decoration: none;
+        
+        &:hover {
+            border-bottom: solid thin var(--majorelle);
+        }
+    }
+}
+
+.cc-inline_icon {
+    display: inline-block;
+    width: type-scale(5);
+    height: type-scale(5);
+    vertical-align: middle;
+    margin: 0 5px;
 }

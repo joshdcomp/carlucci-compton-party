@@ -10,7 +10,7 @@ const Registry = () => {
     <>
       <SEO title={`Michele & Josh are getting married!`} />
       
-      <Layout>
+      <Layout contentPage>
         <RegistryContent />
       </Layout>
     </>

@@ -1,0 +1,97 @@
+.cc-slug_header {
+    .cc-slug_header--link {
+        display: inline-block;
+        visibility: hidden;
+        vertical-align: bottom;
+        border-radius: 1000px;
+    
+        &:hover {
+            svg {
+                stroke: var(--slate);
+            }
+        }
+    }
+
+    &:before {
+        content: '';
+        display: block;
+    }
+
+    &:hover .cc-slug_header--link {
+        visibility: visible;
+    }
+
+    .cc-slug_header--link svg {
+        max-width: 100%;
+        max-height: 100%;
+        stroke: var(--raincloud);
+        display: block;
+    }
+
+    &.cc-slug_header-size-30 {
+        $padding: 5px;
+        $dimension: var(--fs-header-30);
+        $offset-right: 5px;
+
+        &:before {
+            width: calc(#{$dimension} + #{$offset-right});
+            height: $dimension;
+            padding: $padding;
+            margin-left: calc( calc(#{$dimension} + #{$padding/2 + $offset-right}) * -1 );
+        }
+        
+        .cc-slug_header--link {
+            
+            width: $dimension;
+            height: $dimension;
+            padding: $padding;
+            margin-left: calc( calc(#{$dimension} + #{$padding/2 + $offset-right}) * -1 );
+            margin-right: $offset-right;
+        }
+    }
+    
+    &.cc-slug_header-size-20 {
+        $padding: 5px;
+        $dimension: var(--fs-header-20);
+        $offset-right: 5px;
+        
+        &:before {
+            width: calc(#{$dimension} + #{$offset-right});
+            height: $dimension;
+            padding: $padding;
+            margin-left: calc( calc(#{$dimension} + #{$padding/2 + $offset-right}) * -1 );
+            position: absolute;
+        }
+        
+        .cc-slug_header--link {    
+            width: $dimension;
+            height: $dimension;
+            padding: $padding;
+            margin-left: calc( calc(#{$dimension} + #{$padding/2 + $offset-right}) * -1 );
+            margin-right: $offset-right;
+        }
+    }
+    
+    &.cc-slug_header-size-10 {
+        $padding: 5px;
+        $dimension: var(--fs-header-10);
+        $offset-right: 5px;
+        
+        &:before {
+            width: calc(#{$dimension} + #{$offset-right});
+            height: $dimension;
+            padding: $padding;
+            margin-left: calc( calc(#{$dimension} + #{$padding/2 + $offset-right}) * -1 );
+            position: absolute;
+        }
+
+        .cc-slug_header--link {
+            
+            width: $dimension;
+            height: $dimension;
+            padding: $padding;
+            margin-left: calc( calc(#{$dimension} + #{$padding/2 + $offset-right}) * -1 );
+            margin-right: $offset-right;
+        }
+    }
+}

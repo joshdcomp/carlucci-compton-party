@@ -69,7 +69,7 @@ const Nav = () => {
           <ul className="cc-info_list">
             <li className="cc-info_list--li">
               <strong>When:</strong>
-              <span>May 8, 2020</span>
+              <span>May 8, 2021</span>
             </li>
   
             <li className="cc-info_list--li">

@@ -1,10 +1,8 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
-import { Home } from "../components/icons";
+import PageTitle from '../components/page-title'
 
 const AboutUs = () => {
 
@@ -12,99 +10,71 @@ const AboutUs = () => {
     <>
       <SEO title={`Michele & Josh are getting married!`} />
       
-      <Layout>
-      <section className="cc-section">
-          <h1 className="cc-text-header-20 cc-layout--title">
-            <Link to="/" className="cc-layout--title_home_link"><Home /></Link>
-            About Us
-          </h1>
+      <Layout contentPage>
+        <section className="cc-section">
+          <PageTitle
+            title="About us"
+          />
 
-          <h2>Our Story</h2>
+          <h2>Our Engagement Story</h2>
 
           <p>
-            Michele and Josh met on OkCupid in January 2017, and after chatting for a bit, Michele gave
-            Josh her number.
+            In the spring of 2019 with the help of their wonderful friends, Josh cooked up a scheme 
+            to propose to Michele.
           </p>
 
           <p>
-            He never texted her though! Rude.
+            Josh worked with Michele's friend Tia to schedule a 'photoshoot' with 'hip young people' 
+            for a promotional event at one of their favorite neighborhood dive bars (Michele
+            does not ask questions when it comes to Tia).
           </p>
 
           <p>
-            A few days later, Josh messaged her back on the app asking if she’d changed her mind…apparently
-            Josh had copied her number wrong and was sending <del>hilariously clever and witty</del> texts
-            into the ether never to be seen by Michele.
+            On March 31, 2019, Michele and Josh donned their hippest, youngest clothes and walked at 
+            what Josh thought was a leisurely (read: adrenaline addled) pace to 
+            &nbsp;<a href="http://www.highdive-brooklyn.com/" target="__blank">High Dive</a>. On the way
+            there, they heard a person scold his elderly dog pooping on the sidewalk: “That’s not very
+            ladylike, <em>Liz</em>.”
           </p>
 
           <p>
-            That sorted, they started <em>actually</em> texting. Michele was in Atlantic City for a bachelor
-            /ette party. She seduced him with lines like “In my Miller Lite jacket with no makeup and
-            unbrushed hair“ and “I'm honestly the biggest bro at this table”. Josh countered with compliments
-            on “The fliqueness of the eyebrows [sic]” and pics of Wash.
+            It was delightful, but Josh was walking much too fast to fully enjoy it.
           </p>
 
           <p>
-            They were both very good at texting.
+            When they arrived, Tia was set up in the back patio ready to capture the moment&hellip;with one
+            hitch: a pair of Park Slope moms fresh from morning yoga were <em>also</em> set up in the back patio,
+            very close to Tia's area, and refusing to move (Brooklyn yard seating is serious business).
           </p>
 
           <p>
-            Josh’s first photographic evidence of Michele outside of the app were bathroom selfies in her
-            Miller Lite jacket from the Wild West Bar in Bally’s. It was extremely classy and Michele gave
-            off an elegant, poised, and sophisticated vibe…
+            As Tia started taking photos, one of these ladies asked if this was an engagement shoot
+            <span className="cc-inline_icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-7.536 5.879a1 1 0 001.415 0 3 3 0 014.242 0 1 1 0 001.415-1.415 5 5 0 00-7.072 0 1 1 0 000 1.415z" clipRule="evenodd" />
+              </svg>
+            </span>
           </p>
 
           <p>
-            Coming out of that weekend Josh wasn’t fully convinced Michele was real…she had incredibly pretty
-            eyes, was basically a Miller Lite brand ambassador, <em>demanded</em> pics of Wash, and liked
-            gambling?
+            Josh and Tia smiled through gritted teeth saying it was not, but these ladies insisted on asking more
+            questions&hellip;somewhere in the chaos Josh proposed. Lucily Michele was still surprised and said yes!
           </p>
 
           <p>
-            Josh and Michele had their first date at Horseshoe Bar on Inauguration Day. Even though Michele
-            was indeed real, spirits were still low. To cope, they drank many $5 Natty Light tallboys over games of Big Buck Hunter. This set the tone for the following months: while they got to know each other Josh and Michele made the circuit around Alphabet City’s dive bars, and eventually became ~official~ at another favorite: The Library, which has some unreal 2-for-1 happy hour specials, but we digress.
+            As a final surprise, Josh had all their friends waiting next door. Soon as Michele said yes, everyone
+            crowded into the patio and proceeded to drink celebratory High Lifes well into the night.
+          </p>
+
+          <h2>Engagement Photos</h2>
+
+          <p>
+            We went to Portugal <em>right</em> before the world turned upside down &amp; we did a cute lil photoshoot while we were there!
           </p>
 
           <p>
-            In the next year, they’d travel to Josh’s home of Michigan, where Michele learned that Faygo is a
-            real thing not just made up by the Insane Clown Posse; Mexico City, where they tried every
-            micheleada; and Paris, where their relationship was accelerated the shared experience of having
-            food poisoning in a studio apartment in a 6-floor walkup.
-          </p>
-
-          <p>
-            Things to consider adding ^^:
-          </p>
-
-          <ul>
-
-            <li>Vacation house and the unhinged stairwell</li>
-
-            <li>Cooking…we made sausage for the first time!</li>
-
-            <li>Hung out on the roof</li>
-          </ul>
-
-          <p>
-            In May of 2018, they moved in together to an overpriced apartment in Brooklyn and found that they
-            could totally live together successfully if they ignored the constant fighting of their two cats.
-            Later that year, they’d spend New Year’s in Morocco, where Michele basically saw stars for the
-            first time and realized that camels are actually much larger than horses. Who knew? Life went on.
-          </p>
-          <p>
-            A few months later, with the help of their wonderful friends, Josh cooked up a scheme to propose. On
-            March 31, 2019, they had plans to go to High Dive for what Michele had been told by her friend Tia was
-            a test photoshoot for a promotional event (Michele does not ask questions when it comes to Tia). On the
-            way there, they heard a person scold his elderly dog by saying, “That’s not very ladylike,
-          <em>Liz</em>.” It was delightful, but Josh was walking too fast to fully enjoy it.
-          </p>
-          <p>
-            They went to the backyard of the bar and Tia started taking photos. Then, some nosy women next to them
-            asked if this was an engagement shoot; Josh and Tia basically screamed at them that it was not, and
-            then somewhere in the chaos Josh actually proposed. Josh surprised Michele by having all their friends
-            ready to celebrate, and they proceeded to drink celebratory High Lifes into the night.
-          </p>
-          <p>
-            Fast forward a year and a half, and Michele and Josh have …………
+            <strong>Want prints?</strong> these are web photos, if you want printouts let us know which ones you want and
+            we'll send them to you!
           </p>
         </section>
       </Layout>

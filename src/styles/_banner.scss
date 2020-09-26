@@ -1,0 +1,52 @@
+.cc-banner {
+    position: absolute; 
+    background-color: var(--heinz);
+    z-index: var(--z-covid_banner);
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    
+    * {
+        color: white;
+    }
+
+    .cc-banner--inner {
+        width: 75vw;
+        min-width: 720px;
+        margin: auto;
+    }
+
+    .cc-banner--title {
+        font-size: type-scale(3);
+        margin-bottom: 5px;
+        cursor: pointer;
+
+        &:focus {
+            border: none;
+            outline: none;
+        }
+    }
+
+    .cc-banner--title_icon {
+        height: type-scale(3);
+        width: type-scale(3);
+        display: inline-block;
+        vertical-align: bottom;
+        margin-right: 5px;
+    }
+
+    .cc-banner--message {
+        font-size: type-scale(3);
+        font-weight: var(--fw-200);
+        line-height: 1.2;
+        margin-bottom: 0;
+        display: none;
+        visibility: collapse;
+        margin-left: type-scale(3) + rem(5px);
+    }
+    
+    &.cc-banner-is_open .cc-banner--message {
+        display: block;
+        visibility: visible;
+    }
+}

@@ -1,10 +1,49 @@
-h1, h2, h3, p {
+h1, h2, h3, p, img {
     max-width: 550px;
+}
+
+strong {
+    color: var(--color-header-10);
+}
+
+.cc-text-header-30 {
+    font-size: var(--fs-header-30);
+    font-weight: var(--fw-600);
+    color: var(--color-header-30);
+    margin-top: 25px;
+    margin-bottom: 5px;
 }
 
 .cc-text-header-20 {
     font-size: var(--fs-header-20);
     font-weight: var(--fw-600);
+    color: var(--color-header-20);
+    margin-top: 45px;
+    margin-bottom: 5px;
+}
+
+.cc-text-header-10 {
+    font-size: var(--fs-header-10);
+    font-weight: var(--fw-600);
+    color: var(--color-header-10);
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+.cc-text-header-5 {
+    font-size: var(--fs-header-5);
+    font-weight: var(--fw-600);
+    color: var(--color-header-10);
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.cc-text-header-1 {
+    font-size: var(--fs-header-1);
+    font-weight: var(--fw-600);
+    color: var(--color-header-10);
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 .cc-text-body-20 {
