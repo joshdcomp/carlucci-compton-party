@@ -114,7 +114,7 @@ body {
         clear: both;
     }
 
-    a {
+    a:not(.cc-tiles--tile_link-logo):not(.cc-layout--title_home_link):not(.cc-slug_header--link) {
         color: var(--majorelle);
         padding-bottom: 2px;
         text-decoration: none;
@@ -144,7 +144,7 @@ body {
 
 .cc-img-2_up {
     width: 100%;
-    
+
     @media screen and (min-width: 600px) {
         float: left;
         width: 45%;

@@ -4,6 +4,7 @@
     position: relative;
     display: flex; 
     min-height: 100vh;
+    overflow: hidden;
 
     .cc-layout--card {
         color: var(--majorelle);
