@@ -1,16 +1,21 @@
 .cc-nav {
     height: 220px;
     width: 220px;
-    top: 0;
-    right: 0;
+    top: -70px;
+    right: -40px;
     transform: translate(100px, -90px);
-
+    
     --dimensionTiming: cubic-bezier(0.25, 0.1, 0.25, 1.0);
     --dimensionDuration: 150ms;
-
+    
     transition: height var(--dimensionDuration) var(--dimensionTiming), 
-                width var(--dimensionDuration) var(--dimensionTiming),
-                transform 150ms ease-in;
+    width var(--dimensionDuration) var(--dimensionTiming),
+    transform 150ms ease-in;
+    
+    @media screen and (min-width: 600px) {
+        top: 0;
+        right: 0;
+    }
 
     * {
         color: white;
@@ -42,11 +47,10 @@
         cursor: pointer;
         transition: top 100ms ease-in,
                     left 100ms ease-in;
+        outline: none;
 
-        &:focus,
-        &:active {
-            outline: none;
-            border: none;
+        @at-root .cc-layout-is_keyboarding &:focus {
+            outline: solid thin white;
         }
 
         &:hover svg path {

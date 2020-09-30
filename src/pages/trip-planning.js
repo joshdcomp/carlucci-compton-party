@@ -4,12 +4,16 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageTitle from '../components/page-title'
 import SlugHeader from '../components/slug-header'
+import Img from '../components/img'
+import CopyTooltip from "../components/copy-tooltip"
 
 import getClipClassName from '../utils/get-clip-classname'
 import formatPhoneNumber from '../utils/format-phone'
+import { AboutUs } from '../components/icons'
 
 const TripPlanning = () => {
   const bhPhone = '7183833800'
+
   return (
     <>
       <SEO title={`Michele & Josh are getting married!`} />
@@ -18,7 +22,7 @@ const TripPlanning = () => {
         <section className="cc-section">
 
           <PageTitle
-            title="Trip Planning"
+            title="Trip planning"
           />
 
           <SlugHeader
@@ -31,12 +35,10 @@ const TripPlanning = () => {
             header="h3"
           />
 
-          <p><strong>Note:</strong> We’re in uncertain times, we suggest buying refundable tickets.</p>
-
           <p>
-            New York is served by three major airports: JFK, LaGuardia (LGA), and Newark (EWR). They’re
-            not great :upside_down_face:. You’ll be tempted by slightly cheaper fares to book Newark,
-            but just be warned that it’s a hike to get to and from, and the cab rates are more expensive
+            New York is served by three major airports: JFK, LaGuardia (LGA), &amp; Newark (EWR). They’re
+            not great<span className="cc-inline_icon cc-util-rotate-180" aria-hidden="true"><AboutUs /></span>. You’ll be tempted by slightly cheaper fares to book Newark,
+            but just be warned that it’s a hike to get to &amp; from, &amp; the cab rates are more expensive
             …book LGA or JFK if you can.
           </p>
 
@@ -44,9 +46,11 @@ const TripPlanning = () => {
             Taxis are a part of life in New York! When you land the least painful way (especially with
             luggage) to get to your destination is by taking a yellow cab. A cab from JFK or LaGuardia
             will cost around $50-60; from Newark, it’s closer to $80. Go straight to the yellow taxi
-            line…Lyft and Uber will be a hassle, and the dudes offering car service inside will try and
+            line…Lyft &amp; Uber will be a hassle, &amp; the dudes offering car service inside will try and
             scam you in some way or other.
           </p>
+
+          <p><strong>Note:</strong> We’re in uncertain times, we suggest buying refundable tickets.</p>
           
           <SlugHeader
             title="Road trip"
@@ -54,20 +58,20 @@ const TripPlanning = () => {
           />
 
           <p>
-            Entering Manhattan through the Holland or Lincoln Tunnel is for romcoms and people who like
+            Entering Manhattan through the Holland or Lincoln Tunnel is for romcoms &amp; people who like
             to sit in traffic for 3 hours (ask Josh’s parents about their first trip to the city!). If
             you’re driving to NYC from out of town, we’d recommend planning your trip to come through
-            Michele’s home borough of Staten Island and cross into Brooklyn over the majestic Verrazzano
+            Michele’s home borough of Staten Island &amp; cross into Brooklyn over the majestic Verrazzano
             Bridge (you get a better view of the skyline anyway).
           </p>
 
           <p>
-            <strong>Be aware:</strong> all driving entrances to NYC incur a toll of $16-19, you’ll get
+            <strong>Note:</strong> all driving entrances to NYC incur a toll of $16-19, you’ll get
             a bill in the mail a few weeks later.
           </p>
 
           <SlugHeader
-            title="Staying in the city"
+            title="Staying in the City"
             header="h2"
           />
 
@@ -88,8 +92,8 @@ const TripPlanning = () => {
           />
           <p>
             The Box House Hotel is a fabulous venue for a special event, but it’s not an ideal vacation hub.
-            If you’re planning on an extended stay in NYC, we suggest booking somewhere more centrally&ndash;accessible (we’ll have Lyft credits for getting to and from the venue within the five boroughs).
-            For neighborhood recommendations, please reach out to Michele and Josh!
+            If you’re planning on an extended stay in NYC, we suggest booking somewhere more centrally&ndash;accessible (we’ll have Lyft credits for getting to &amp; from the venue within the five boroughs).
+            For neighborhood recommendations, please reach out to Michele &amp; Josh!
           </p>
 
           <SlugHeader
@@ -98,7 +102,7 @@ const TripPlanning = () => {
           />
           <p>
             If you’re just staying in NYC for the night, stay in Greenpoint! Below is information for our
-            Box House block and other hotels nearby.
+            Box House block &amp; other hotels nearby.
           </p>
 
           <SlugHeader
@@ -107,29 +111,31 @@ const TripPlanning = () => {
           />
           <p>
             Rooms are being held at the venue hotel for wedding attendees. To ensure that rooms are still
-            available at the discounted rate, it’s best to book via phone at <a href={`tel://${bhPhone}`}>{formatPhoneNumber(bhPhone)}</a> 
+            available at the discounted rate, it’s best to book via phone at <CopyTooltip copyText={formatPhoneNumber(bhPhone)}><a href={`tel://${bhPhone}`}>{formatPhoneNumber(bhPhone)}</a></CopyTooltip>
             &nbsp;and provide the following information:
           </p>
 
           <p>
-            <strong>Group:</strong> Carlucci/Compton Wedding
-            <br />
-            <strong>Group Folio Number:</strong> 270019
+            <CopyTooltip copyText={`Carlucci/Compton Wedding\n270019`}>
+              <strong>Group:</strong> Carlucci/Compton Wedding
+              <br />
+              <strong>Group Folio Number:</strong> 270019
+            </CopyTooltip>
           </p>
 
-          <img
+          <Img
             alt="The Box House Hotel"
             src="/assets/box-house-1.jpg"
             className={`cc-img ${getClipClassName()}`}
           />
 
           <SlugHeader
-            title="Nearby Hotels"
+            title="Nearby hotels"
             header="h5"
           />
           <p>
             Other hotels in the Greenpoint area include the Henry Normal Hotel (10-minute drive); the Franklin
-            Guesthouse (10-minute walk or 5-minute drive); and the apartment-style Habitat 101 Brooklyn
+            Guesthouse (10-minute walk or 5-minute drive); &amp; the apartment-style Habitat 101 Brooklyn
             (10-minute drive).
           </p>
 
@@ -138,7 +144,7 @@ const TripPlanning = () => {
             src="https://www.google.com/maps/d/u/0/embed?mid=1LCtuZmW9_Lg26BNnKBqVSLyut3dIZJr7"
             width="100%"
             height="480"
-            frameborder="0"
+            frameBorder="0"
             className="cc-clip-1"
             style={{border:0}}
           />
@@ -160,7 +166,7 @@ const TripPlanning = () => {
             header="h3"
           />
           <p>
-            Lyft credits will be available to bring you to and from the venue if you are staying anywhere within
+            Lyft credits will be available to bring you to &amp; from the venue if you are staying anywhere within
             the five boroughs. Make somebody else drive, we wanna party with you!
           </p>
 
@@ -179,26 +185,26 @@ const TripPlanning = () => {
             src="https://www.google.com/maps/d/embed?mid=1-ftYQ4mWcO4ss9WLmj8WA7gJVMyFmaPj"
             width="100%"
             height="480"
-            frameborder="0"
+            frameBorder="0"
             className="cc-clip-1"
             style={{border:0}}
           />
 
           <SlugHeader
-            title="Public Transit"
+            title="Public transit"
             header="h3"
           />
           <p>
-            While we’re hoping buses and subways will be a viable way of getting to the venue by May 2021,
+            While we’re hoping buses &amp; subways will be a viable way of getting to the venue by May 2021,
             transit options in Greenpoint are still a little limited. Coming from South Brooklyn, you’re
-            looking at a mix of the G train and the B43 bus. Ask Michele and Josh for transit tips!
+            looking at a mix of the G train &amp; the B43 bus. Ask Michele &amp; Josh for transit tips!
           </p>
           <iframe
             title="Public transit near the Box House Hotel"
             src="https://www.google.com/maps/d/u/0/embed?mid=10tgvgGV0B6huTz8s12IsoapfiG160VsR"
             width="100%"
             height="480"
-            frameborder="0"
+            frameBorder="0"
             className="cc-clip-1 cc-embedded_map"
             style={{border:0}}
           />

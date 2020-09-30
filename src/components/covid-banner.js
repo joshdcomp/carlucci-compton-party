@@ -16,16 +16,17 @@ const CovidBanner = () => {
             <div className="cc-banner--inner">
                 <h1 
                     className="cc-banner--title"
+                    onClick={() => {setIsExpanded(!isExpanded)}}
+                    onKeyPress={(e) => {e.preventDefault();setIsExpanded(!isExpanded)}}
                     role="button"
                     tabIndex="0"
-                    onClick={() => {setIsExpanded(!isExpanded)}}
                 >
                     <i aria-hidden="true" className="cc-banner--title_icon">{chevron}</i>
                     What about COVID?
                 </h1>
                 <p className="cc-banner--message">
                     Right now we gotta be cautiously optimistic but, we’ll only hold the event 
-                    if we can guarantee the health and safety of our guests. In the meantime, 
+                    if we can guarantee the health &amp; safety of our guests. In the meantime, 
                     wear a friggin’ mask!
                 </p>
             </div>

@@ -11,19 +11,25 @@
     }
 
     .cc-banner--inner {
-        width: 75vw;
-        min-width: 720px;
-        margin: auto;
+        margin-left: 15px;
+        margin-right: 120px;
+
+        @media screen and (min-width: 600px) {
+            width: 75vw;
+            min-width: 720px;
+            margin: auto;
+        }
     }
 
     .cc-banner--title {
         font-size: type-scale(3);
-        margin-bottom: 5px;
+        padding: 2px;
+        margin-bottom: 0;
         cursor: pointer;
+        outline: none;
 
-        &:focus {
-            border: none;
-            outline: none;
+        @at-root .cc-layout-is_keyboarding &:focus {
+            outline: solid thin white;
         }
     }
 

@@ -10,21 +10,33 @@
     }
 
     .cc-layout--inner {
-        width: 75vw;
-        min-width: 720px;
-        position: relative;
+        width: 90vw;
         margin: 90px auto;
+
+        @media screen and (min-width: 600px) {
+            width: 75vw;
+            min-width: 720px;
+            position: relative;
+        }
     }
     
     .cc-layout--main {
         background-color: white;
         border: solid thin var(--mintfoam);
         z-index: var(--z-content);
-        padding: 75px;
-    }
+        padding: 30px;
 
+        @media screen and (min-width: 600px) {
+            padding: 75px;
+        }
+    }
+    
     &.cc-layout-content_page .cc-layout--main {
-        padding-left: 100px;
+        padding-left: 50px;
+
+        @media screen and (min-width: 600px) {
+            padding-left: 100px;
+        }
     }
 
     .cc-layout--nav {

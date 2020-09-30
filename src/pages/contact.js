@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageTitle from '../components/page-title'
 import SlugHeader from '../components/slug-header'
+import CopyTooltip from '../components/copy-tooltip'
 
 import formatPhoneNumber from '../utils/format-phone'
 
@@ -36,29 +37,32 @@ const Contact = () => {
           />
 
           <p>
-            We've set up a Google Voice number for wedding stuff, texting is preferred!
-            <br />
-            <a href={`tel://${ourPhone}`}>{formatPhoneNumber(ourPhone)}</a>
+            We've set up a Google Voice number for wedding stuff, texting is preferred!&nbsp;
+            <CopyTooltip copyText={formatPhoneNumber(ourPhone)}>
+              <a href={`tel://${ourPhone}`}>{formatPhoneNumber(ourPhone)}</a>
+            </CopyTooltip>
           </p>
 
           <SlugHeader
             title="Email"
             header="h3"
-          />
+            />
           <p>
-            We've also set up a special email inbox for wedding stuff, send us notes &amp; photos!
-            <br />
-            <a href={`mailto://${ourPhone}`}>{ourEmail}</a>
+            We've also set up a special email inbox for wedding stuff, send us notes &amp; photos!&nbsp;
+            <CopyTooltip copyText={ourEmail}>
+              <a href={`mailto://${ourEmail}`}>{ourEmail}</a>
+            </CopyTooltip>
           </p>
 
           <SlugHeader
-            title="Box house hotel"
+            title="Box House Hotel"
             header="h2"
           />
           <p>
-            For booking, parking, and general venue info, contact the Box House Hotel at:
-            <br />
-            <a href={`tel://${boxHousePhone}`}>{formatPhoneNumber(boxHousePhone)}</a>
+            For booking, parking, and general venue info, contact the Box House Hotel at:&nbsp;
+            <CopyTooltip copyText={formatPhoneNumber(boxHousePhone)}>
+              <a href={`tel://${boxHousePhone}`}>{formatPhoneNumber(boxHousePhone)}</a>
+            </CopyTooltip>
           </p>
         </section>
       </Layout>

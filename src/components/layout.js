@@ -1,10 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React, { createContext, useState, useCallback, useEffect } from "react"
 import PropTypes from "prop-types"
 import classnames from "classnames"
@@ -22,11 +15,12 @@ export const BgContext = createContext({ nav: '', tiles: [], shuffle: () => { } 
 
 const Layout = ({ children, contentPage }) => {
   const bgAssign = (set) => ({ nav: set.shift(), tiles: set })
-  const [bgs] = useState(bgAssign(getBGSet(4)))
 
-  const [reRender, doRerender] = useState({ hash: Math.random() })
+  const [ bgs ] = useState(bgAssign(getBGSet(4)))
 
-  const [mainEl, setMainEl] = useState(false)
+  const [ reRender, doRerender ] = useState({ hash: Math.random() })
+
+  const [ mainEl, setMainEl ] = useState(false)
 
   const shuffle = () => { doRerender({ hash: Math.random() }) }
 
@@ -39,9 +33,29 @@ const Layout = ({ children, contentPage }) => {
     return () => { clearInterval(interval)}
   })
 
+  useEffect(() => {
+    const handleTab = (e) => {
+      console.log(e)
+      if (e.keyCode === 9) {
+        document.body.classList.add('cc-layout-is_keyboarding')
+      }
+      
+      if (e.keyCode === 27) {
+        document.body.classList.remove('cc-layout-is_keyboarding')
+      }
+    }
+
+    document.addEventListener('keydown', handleTab)
+    return () => {
+      document.removeEventListener('keydown', handleTab)
+    }
+  })
+
   const wrapperClasses = classnames(
     'cc-layout',
-    { 'cc-layout-content_page': contentPage }
+    { 
+      'cc-layout-content_page': contentPage,
+    }
   )
 
   return (
