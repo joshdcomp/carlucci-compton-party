@@ -34,6 +34,7 @@ function SEO({ description, lang, meta, title }) {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
+      favicon="/assets/favicon.png"
       meta={[
         {
           name: `description`,
@@ -52,8 +53,24 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: `https://carlucci-compton.party/assets/social-preview.png`,
+        },
+        {
+          property: `og:url`,
+          content: `https://carlucci-compton.party`,
+        },
+        {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
+        },
+        {
+          name: `twitter:url`,
+          content: `https://carlucci-compton.party`,
+        },
+        {
+          name: `twitter:image`,
+          content: `https://carlucci-compton.party/assets/social-preview.png`,
         },
         {
           name: `twitter:creator`,

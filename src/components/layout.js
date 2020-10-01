@@ -35,7 +35,6 @@ const Layout = ({ children, contentPage }) => {
 
   useEffect(() => {
     const handleTab = (e) => {
-      console.log(e)
       if (e.keyCode === 9) {
         document.body.classList.add('cc-layout-is_keyboarding')
       }

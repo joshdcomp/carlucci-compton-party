@@ -6,6 +6,7 @@ import PageTitle from '../components/page-title'
 import SlugHeader from '../components/slug-header'
 import Img from '../components/img'
 import CopyTooltip from "../components/copy-tooltip"
+import MapEmbed from "../components/map-embed"
 
 import getClipClassName from '../utils/get-clip-classname'
 import formatPhoneNumber from '../utils/format-phone'
@@ -138,16 +139,13 @@ const TripPlanning = () => {
             Guesthouse (10-minute walk or 5-minute drive); &amp; the apartment-style Habitat 101 Brooklyn
             (10-minute drive).
           </p>
-
-          <iframe
+          
+          <MapEmbed
             title="Other hotels near the Box House Hotel"
-            src="https://www.google.com/maps/d/u/0/embed?mid=1LCtuZmW9_Lg26BNnKBqVSLyut3dIZJr7"
-            width="100%"
-            height="480"
-            frameBorder="0"
-            className="cc-clip-1"
-            style={{border:0}}
+            embed="https://www.google.com/maps/d/u/0/embed?mid=1LCtuZmW9_Lg26BNnKBqVSLyut3dIZJr7"
+            href="https://www.google.com/maps/d/viewer?mid=1LCtuZmW9_Lg26BNnKBqVSLyut3dIZJr7"
           />
+
         </section>
 
         <section className="cc-section">
@@ -180,14 +178,10 @@ const TripPlanning = () => {
             venue.
           </p>
 
-          <iframe
+          <MapEmbed
             title="Parking near the Box House Hotel"
-            src="https://www.google.com/maps/d/embed?mid=1-ftYQ4mWcO4ss9WLmj8WA7gJVMyFmaPj"
-            width="100%"
-            height="480"
-            frameBorder="0"
-            className="cc-clip-1"
-            style={{border:0}}
+            embed="https://www.google.com/maps/d/u/0/embed?mid=1-ftYQ4mWcO4ss9WLmj8WA7gJVMyFmaPj"
+            href="https://www.google.com/maps/d/viewer?mid=1-ftYQ4mWcO4ss9WLmj8WA7gJVMyFmaPj"
           />
 
           <SlugHeader
@@ -199,14 +193,11 @@ const TripPlanning = () => {
             transit options in Greenpoint are still a little limited. Coming from South Brooklyn, you’re
             looking at a mix of the G train &amp; the B43 bus. Ask Michele &amp; Josh for transit tips!
           </p>
-          <iframe
+
+          <MapEmbed
             title="Public transit near the Box House Hotel"
-            src="https://www.google.com/maps/d/u/0/embed?mid=10tgvgGV0B6huTz8s12IsoapfiG160VsR"
-            width="100%"
-            height="480"
-            frameBorder="0"
-            className="cc-clip-1 cc-embedded_map"
-            style={{border:0}}
+            embed="https://www.google.com/maps/d/u/0/embed?mid=10tgvgGV0B6huTz8s12IsoapfiG160VsR"
+            href="https://www.google.com/maps/d/viewer?mid=10tgvgGV0B6huTz8s12IsoapfiG160VsR"
           />
         </section>
       </Layout>

@@ -124,7 +124,7 @@ const ShapeCanvas = ({layoutRef, reRender}) => {
             const shapeSize = weightedLottery(sizePresets)
 
             // 3:1 against a given item appearing above the main content
-            const isAbove = weightedLottery([ [false, 3], [true, 1] ])
+            const isAbove = weightedLottery([ [false, 3], [true, 1] ]) && window.outerWidth > 600
 
             let yMin = 0
             let yMax = 0

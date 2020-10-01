@@ -1,6 +1,6 @@
 .cc-copy_tooltip {
     cursor: pointer;
-    
+
     &:before {
         content: '';
         display: inline-block;
@@ -22,6 +22,8 @@
         left: 50%;
         top: -3px;
         width: fit-content;
+        min-width: 120px;
+        text-align: center;
         
         &:before {
             content: '';
