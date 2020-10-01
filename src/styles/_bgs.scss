@@ -1,0 +1,111 @@
+.cc-bg-bazooka {
+    background-color: var(--bazooka);
+    
+    &.cc-nav {
+        background-color: transparent;
+        &:before {
+            background-color: var(--bazooka);
+        }
+    }
+}
+
+.cc-bg-mintfoam {
+    background-color: var(--mintfoam);
+
+    &.cc-nav {
+        background-color: transparent;
+        &:before {
+            background-color: var(--mintfoam);
+        }
+    }
+}
+
+.cc-bg-majorelle {
+    background-color: var(--majorelle);
+
+    &.cc-nav {
+        background-color: transparent;
+        &:before {
+            background-color: var(--majorelle);
+        }
+    }
+}
+
+.cc-bg-coral {
+    background-color: var(--coral);
+
+    &.cc-nav {
+        background-color: transparent;
+        &:before {
+            background-color: var(--coral);
+        }
+    }
+}
+
+.cc-bg-heinz {
+    background-color: var(--heinz);
+
+    &.cc-nav {
+        background-color: transparent;
+        &:before {
+            background-color: var(--heinz);
+        }
+    }
+}
+
+.cc-bg-sol_lewit {
+    background-color: var(--sol_lewit);
+
+    &.cc-nav {
+        background-color: transparent;
+        &:before {
+            background-color: var(--sol_lewit);
+        }
+    }
+}
+
+.cc-bg-sol_lewet {
+    background-color: var(--sol_lewet);
+
+    &.cc-nav {
+        background-color: transparent;
+        &:before {
+            background-color: var(--sol_lewet);
+        }
+    }
+}
+
+.cc-bg-neon {
+    background-color: var(--neon);
+    
+    * { color: var(--slate); }
+
+    &.cc-nav {
+        background-color: transparent;
+        &:before {
+            background-color: var(--neon);
+        }
+    }
+}
+
+.cc-bg-slate {
+    background-color: var(--slate);
+
+    &.cc-nav {
+        background-color: transparent;
+        &:before {
+            background-color: var(--slate);
+        }
+    }
+}
+
+.cc-bg-raincloud {
+    background-color: var(--raincloud);
+
+    &.cc-nav {
+        background-color: transparent;
+        &:before {
+            background-color: var(--raincloud);
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.cc-clip {
+    > * {
+        padding: 20px;
+    }
+}
+
+.cc-clip-1 {
+    clip-path: url(#clip-path-box-1);
+}
+
+.cc-clip-2 {
+    clip-path: url(#clip-path-box-2);
+}
+
+.cc-clip-3 {
+    clip-path: url(#clip-path-box-3);
+}
+
+.cc-clip-4 {
+    clip-path: url(#clip-path-box-4);
+}
