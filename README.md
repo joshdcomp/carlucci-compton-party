@@ -1,9 +1,7 @@
 # It's a Carlucci Compton Party!
 
-Hey! I got engaged, this repo powers what will eventually is going to be our wedding site at [carlucci-compton.party](https://carlucci-compton.party).
+Hey! I'm getting married! This repo powers our wedding site at [carlucci-compton.party](https://carlucci-compton.party).
 
-This site is also a POC to see _just_ how much you can do with ES6 and vanilla CSS without any transpiling…you'll note that [package.json](./package.json) is conspicuously absent of any build steps (at the moment, that might change as I add more functionality...no `imports` is a bit of a downer).
+![Site preview](./site-preview.png)
 
-Pushes to `master` triggers a deploy on Netlify. This setup is based on [HTML5 boilerplate](https://html5boilerplate.com/). 
-
-More to come…I guess?
+Pushes to `master` triggers a deploy on [Netlify](https://www.netlify.com/). This is a [Gatsby](https://www.gatsbyjs.com/) site from the [default starter](https://www.gatsbyjs.com/starters/gatsbyjs/gatsby-starter-default/). Font face is [Arquitecta](https://www.fontspring.com/fonts/latinotype/arquitecta), icons are from [heroicons](https://heroicons.com/).
