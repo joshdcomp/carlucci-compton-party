@@ -134,7 +134,7 @@ const AboutUs = () => {
 
           <p>
             Josh &amp; Tia smiled through gritted teeth saying it was not, but these ladies insisted on asking more
-            questions&hellip;somewhere in the chaos Josh proposed. Lucily Michele was still surprised &amp; said yes!
+            questions&hellip;somewhere in the chaos Josh proposed. Luckily Michele was still surprised &amp; said yes!
           </p>
 
           <p>
