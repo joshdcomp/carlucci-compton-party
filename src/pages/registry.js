@@ -8,7 +8,10 @@ const Registry = () => {
 
   return (
     <>
-      <SEO title={`Michele & Josh are getting married!`} />
+      <SEO
+        title={`Michele & Josh's registry`}
+        description={`We've got stuff, consider donating to one of these organizations`}
+      />
       
       <Layout contentPage>
         <RegistryContent />

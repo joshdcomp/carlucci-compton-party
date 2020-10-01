@@ -16,8 +16,8 @@ const Contact = () => {
   return (
     <>
       <SEO
-        title={`Michele & Josh are getting married!`}
-        description={`Get in touch`}
+        title={`Contact Josh & Michele!`}
+        description={`Get in touch with us or the hotel`}
       />
       
       <Layout contentPage>

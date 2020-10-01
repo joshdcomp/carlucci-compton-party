@@ -56,7 +56,10 @@ const AboutUs = () => {
 
   return (
     <>
-      <SEO title={`Michele & Josh are getting married!`} />
+      <SEO
+        title={`About Josh & Michele!`}
+        description={`Did you hear our engagement story? Check out our engagement pics`}
+      />
       
       <Layout contentPage>
         <section className="cc-section">

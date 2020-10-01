@@ -17,7 +17,10 @@ const TripPlanning = () => {
 
   return (
     <>
-      <SEO title={`Michele & Josh are getting married!`} />
+      <SEO
+        title={`Getting to Josh & Michele's wedding!`}
+        description={`Plan your trip to Greenpoint Brooklyn!`}
+      />
 
       <Layout contentPage>
         <section className="cc-section">

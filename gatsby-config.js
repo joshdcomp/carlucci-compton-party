@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Josh & Michele are getting married!`,
     description: `Join us on May 8, 2021 for our wedding celebration`,
     author: `@joshdcomp`,
   },
