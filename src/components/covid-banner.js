@@ -25,7 +25,7 @@ const CovidBanner = () => {
                     What about COVID?
                 </h1>
                 <p className="cc-banner--message">
-                    Right now we gotta be cautiously optimistic but, we’ll only hold the event 
+                    Right now we gotta be cautiously optimistic, but we’ll only hold the event 
                     if we can guarantee the health &amp; safety of our guests. In the meantime, 
                     wear a friggin’ mask!
                 </p>

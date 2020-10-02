@@ -8,6 +8,7 @@ const MapEmbed = ({href, embed, title}) => {
           className="cc-map_embed--link"
           href={href}
           target="_blank"
+          rel="noreferrer"
         >
           <strong>Open map:</strong> {title}
         </a>

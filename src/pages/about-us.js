@@ -97,7 +97,7 @@ const AboutUs = () => {
 
           <p>
             On March 31, 2019, Michele &amp; Josh donned their hippest, youngest clothes &amp; walked at 
-            what Josh thought was a leisurely (read: adrenaline addled) pace to <a href="http://www.highdive-brooklyn.com/" target="__blank">High Dive</a>.
+            what Josh thought was a leisurely (read: adrenaline addled) pace to <a href="http://www.highdive-brooklyn.com/" target="__blank" rel="noreferrer">High Dive</a>.
             On the way there, they heard a person scold his elderly dog pooping on the sidewalk: 
             “That’s not very ladylike, <em>Liz</em>.”
           </p>
@@ -108,7 +108,7 @@ const AboutUs = () => {
 
 
           <p>
-            When they arrived, Tia was set up in the back patio ready to capture the moment&hellip;with one
+            When they arrived, Tia was set up in the back patio ready to capture the moment . . . with one
             hitch: a pair of Park Slope moms fresh from morning yoga were <em>also</em> set up in the back patio,
             very close to Tia's area, &amp; refusing to move (Brooklyn yard seating is serious business).
           </p>
@@ -137,7 +137,7 @@ const AboutUs = () => {
 
           <p>
             Josh &amp; Tia smiled through gritted teeth saying it was not, but these ladies insisted on asking more
-            questions&hellip;somewhere in the chaos Josh proposed. Luckily Michele was still surprised &amp; said yes!
+            questions . . . somewhere in the chaos Josh proposed. Luckily Michele was still surprised &amp; said yes!
           </p>
 
           <p>
