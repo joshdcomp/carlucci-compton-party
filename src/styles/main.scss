@@ -143,6 +143,19 @@ body {
     transform: rotate(180deg)
 }
 
+.cc-util-margin-right-1 {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.cc-text-no_wrap {
+    white-space: nowrap;
+}
+
+.cc-text-strike {
+    text-decoration: line-through;
+}
+
 .cc-img-2_up {
     width: 100%;
 

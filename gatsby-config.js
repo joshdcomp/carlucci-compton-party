@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Josh & Michele are getting married!`,
-    description: `Join us on May 8, 2021 for our wedding celebration`,
+    description: `Join us on May 7, 2022 for our wedding celebration`,
     author: `@joshdcomp`,
   },
   plugins: [

@@ -13,6 +13,8 @@ import getBGSet from "../utils/get-bg-set"
 
 export const BgContext = createContext({ nav: '', tiles: [], shuffle: () => { } })
 
+export const DateContext = createContext({})
+
 const Layout = ({ children, contentPage }) => {
   const bgAssign = (set) => ({ nav: set.shift(), tiles: set })
 
@@ -58,21 +60,23 @@ const Layout = ({ children, contentPage }) => {
   )
 
   return (
-    <BgContext.Provider value={{ shuffle, ...bgs }}>
-      <ClippingPaths />
-      <CovidBanner />
-      <div className={wrapperClasses}>
-        <div className="cc-layout--inner">
-          <Nav />
+    <DateContext.Provider value={{ old: '2021/05/08', current: '2022/05/07', format: 'YYYY/MM/DD' }}>
+      <BgContext.Provider value={{ shuffle, ...bgs }}>
+        <ClippingPaths />
+        <CovidBanner />
+        <div className={wrapperClasses}>
+          <div className="cc-layout--inner">
+            <Nav />
 
-          <main className="cc-layout--main" ref={layoutRef}>
-            {children}
-          </main>
+            <main className="cc-layout--main" ref={layoutRef}>
+              {children}
+            </main>
 
-          <ShapeCanvas layoutRef={mainEl} reRender={reRender} />
+            <ShapeCanvas layoutRef={mainEl} reRender={reRender} />
+          </div>
         </div>
-      </div>
-    </BgContext.Provider>
+      </BgContext.Provider>
+    </DateContext.Provider>
   )
 }
 
