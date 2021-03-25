@@ -22,7 +22,7 @@
     --fs-header-10: #{type-scale(6)};
     --fs-header-5: #{type-scale(5)};
     --fs-header-1: #{type-scale(4)};
-    
+
     --fs-body-20: #{type-scale(6)};
     --fs-body-10: #{type-scale(4)};
 
@@ -62,7 +62,7 @@ body {
     position: relative;
     font-size: 16px;
     box-sizing: border-box;
-    
+
     * {
         font-family: 'Arquitecta', sans-serif;
         position: relative;
@@ -85,6 +85,8 @@ body {
 @import "./carousel";
 @import "./tooltip";
 @import "./map-embed";
+@import "./modal";
+@import "./form";
 
 .cc-button {
     padding: .5rem 1rem;
@@ -120,11 +122,11 @@ body {
         padding-bottom: 2px;
         text-decoration: none;
         outline: none;
-        
+
         &:hover {
             border-bottom: solid thin var(--majorelle);
         }
-        
+
         @at-root .cc-layout-is_keyboarding &:focus {
             outline: solid thin var(--majorelle)
         }
@@ -143,6 +145,24 @@ body {
     transform: rotate(180deg)
 }
 
+.cc-util-margin-right-1 {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.cc-util-margin-vert-2 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.cc-text-no_wrap {
+    white-space: nowrap;
+}
+
+.cc-text-strike {
+    text-decoration: line-through;
+}
+
 .cc-img-2_up {
     width: 100%;
 
@@ -155,7 +175,7 @@ body {
         margin-left: 4%;
     }
 }
- 
+
 .cc-img-center {
     margin: auto;
     display: block;
@@ -165,3 +185,22 @@ body {
     margin-top: 20px;
 }
 
+.cc-grid-2_up {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .cc-grid--item {
+    flex: 1;
+    flex-basis: 100%;
+
+    @media screen and (min-width: 600px) {
+      flex-basis: 0;
+
+      + .cc-grid--item {
+        margin-left: 20px;
+      }
+    }
+  }
+}

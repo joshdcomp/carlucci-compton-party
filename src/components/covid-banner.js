@@ -14,7 +14,7 @@ const CovidBanner = () => {
     return (
         <aside className={bannerClasses}>
             <div className="cc-banner--inner">
-                <h1 
+                <h1
                     className="cc-banner--title"
                     onClick={() => {setIsExpanded(!isExpanded)}}
                     onKeyPress={(e) => {e.preventDefault();setIsExpanded(!isExpanded)}}
@@ -22,13 +22,21 @@ const CovidBanner = () => {
                     tabIndex="0"
                 >
                     <i aria-hidden="true" className="cc-banner--title_icon">{chevron}</i>
-                    What about COVID?
+                    We have a new date!
                 </h1>
+
+
                 <p className="cc-banner--message">
-                    Right now we gotta be cautiously optimistic, but we’ll only hold the event 
-                    if we can guarantee the health &amp; safety of our guests. In the meantime, 
-                    wear a friggin’ mask!
+                  Unfortunately, the ongoing pandemic has forced us to
+                  move our wedding celebration.
                 </p>
+
+                <p className="cc-banner--message">
+                  While things are certainly improving, we want everyone to join us
+                  worry-free, and enjoy New York in all its glory!
+                </p>
+
+
             </div>
         </aside>
     )

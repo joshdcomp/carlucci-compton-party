@@ -2,14 +2,18 @@ import React, { useState } from "react"
 import classnames from 'classnames'
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
+import dayjs from 'dayjs'
+
 
 import { Menu, Close } from '../components/icons'
 
 import useBgSet from "../utils/use-bg-set";
+import useWeddingDate from '../utils/use-wedding-date'
 
 const Nav = () => {
   const [ navIsOpen, setNavOpen ] = useState(false)
   const { nav:navBg } = useBgSet()
+  const { old, current, format } = useWeddingDate()
 
   const isPartiallyActive = ({
     isPartiallyCurrent
@@ -69,7 +73,9 @@ const Nav = () => {
           <ul className="cc-info_list">
             <li className="cc-info_list--li">
               <strong>When:</strong>
-              <span>May 8, 2021</span>
+              <span className="cc-text-strike cc-text-no_wrap cc-util-margin-right-1">{dayjs(old, format).format('MMMM D, YYYY')}</span>
+              <wbr />
+              <span className="cc-text-no_wrap">{dayjs(current, format).format('MMMM D, YYYY')}</span>
             </li>
   
             <li className="cc-info_list--li">
