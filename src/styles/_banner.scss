@@ -1,11 +1,11 @@
 .cc-banner {
-    position: absolute; 
+    position: absolute;
     background-color: var(--heinz);
     z-index: var(--z-covid_banner);
     display: block;
     width: 100%;
     padding: 15px 0;
-    
+
     * {
         color: white;
     }
@@ -49,8 +49,12 @@
         display: none;
         visibility: collapse;
         margin-left: type-scale(3) + rem(5px);
+
+        + .cc-banner--message {
+          margin-top: 10px;
+        }
     }
-    
+
     &.cc-banner-is_open .cc-banner--message {
         display: block;
         visibility: visible;

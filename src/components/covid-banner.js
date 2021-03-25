@@ -31,7 +31,7 @@ const CovidBanner = () => {
                   move our wedding celebration.
                 </p>
 
-                <p className="cc-text-body-10">
+                <p className="cc-banner--message">
                   While things are certainly improving, we want everyone to join us
                   worry-free, and enjoy New York in all its glory!
                 </p>
