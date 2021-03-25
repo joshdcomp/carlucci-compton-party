@@ -193,9 +193,14 @@ body {
 
   .cc-grid--item {
     flex: 1;
+    flex-basis: 100%;
 
-    + .cc-grid--item {
-      margin-left: 20px;
+    @media screen and (min-width: 600px) {
+      flex-basis: 0;
+
+      + .cc-grid--item {
+        margin-left: 20px;
+      }
     }
   }
 }

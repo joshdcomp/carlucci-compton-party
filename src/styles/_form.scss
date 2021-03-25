@@ -1,5 +1,9 @@
 .cc-form {
-  padding: 60px;
+  padding: 30px;
+
+  @media screen and (min-width: 600px) {
+    padding: 60px;
+  }
 
   .cc-form--fieldset {
     border: 0;
