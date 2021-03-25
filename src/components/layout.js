@@ -44,11 +44,11 @@ const Layout = ({ children, contentPage }) => {
   // set keyboard shortcuts for focus states
   useEffect(() => {
     const handleTab = (e) => {
-      if (e.keyCode === 9) {
+      if (e.key === 9) {
         document.body.classList.add('cc-layout-is_keyboarding')
       }
 
-      if (e.keyCode === 27) {
+      if (e.key === "Escape") {
         document.body.classList.remove('cc-layout-is_keyboarding')
       }
     }

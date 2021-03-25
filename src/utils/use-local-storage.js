@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 
 const useLocalStorage = (key, defaultValue) => {
   const [value, setValue] = useState(() => {
-    if (window) {
+    if (typeof window !== 'undefined') {
       const stickyValue = window.localStorage.getItem(key);
 
       return stickyValue !== null
@@ -12,7 +12,7 @@ const useLocalStorage = (key, defaultValue) => {
   });
 
   useEffect(() => {
-    if (window) {
+    if (typeof window !== 'undefined') {
       window.localStorage.setItem(key, JSON.stringify(value));
     }
   }, [key, value]);

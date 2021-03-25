@@ -1,4 +1,4 @@
-h1, h2, h3, p, img {
+h1, h2, h3, p, img, .cc-grid-text_col {
     max-width: 550px;
     width: 100%;
 }
@@ -55,4 +55,8 @@ strong {
 .cc-text-body-10 {
     font-size: var(--fs-body-10);
     font-weight: var(--fw-200);
+}
+
+.cc-text-color-white {
+  color: white;
 }
