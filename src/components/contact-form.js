@@ -45,7 +45,7 @@ const ContactForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
     ? (
         <div className="cc-bg-heinz cc-clip-3 cc-form--error">
           <p className="cc-text-body-10 cc-text-color-white">There was an error:</p>
-          <pre><code>{errMessage}</code></pre>
+          <pre><code>{JSON.stringify(errMessage, null, 2)}</code></pre>
         </div>
       )
     : null
