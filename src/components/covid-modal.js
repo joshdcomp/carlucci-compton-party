@@ -39,7 +39,7 @@ const CovidModal = () => {
 
       <ContactForm
         onSuccess={handleClose}
-        greetingMessage="Send us your name &amp; email for updates!"
+        greetingMessage="Leave us your name &amp; email for updates!"
         successMessage="This popup will close in a few seconds (or just hit escape)."
       />
     </Modal>
