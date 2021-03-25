@@ -45,7 +45,7 @@ const ContactForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
     ? (
         <div className="cc-bg-heinz cc-clip-3 cc-form--error">
           <p className="cc-text-body-10 cc-text-color-white">There was an error:</p>
-          <pre><code>{JSON.stringify(errMessage, null, 2)}</code></pre>
+          <pre><code className="cc-text-color-white">{JSON.stringify(errMessage, null, 2)}</code></pre>
         </div>
       )
     : null
@@ -132,7 +132,7 @@ const ContactForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
       </fieldset>
 
       <input type="hidden" name="bot-field" />
-      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="form-name" value="cc-party-contact" />
 
       <button
         type="submit"
