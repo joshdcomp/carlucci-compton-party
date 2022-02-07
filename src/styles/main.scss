@@ -4,6 +4,24 @@
 @import "./util/convert";
 @import "./util/remove";
 
+$colorHexes: (
+  'bazooka': #F4C4C6,
+  'mintfoam': #81CA9C,
+  'majorelle': #007AC0,
+  'coral': #F37444,
+  'heinz': #F15F68,
+  'sol_lewit': #A4DDEB,
+  'sol_lewet': #8CC7ED,
+  'neon': #FFF200,
+  'slate': #737e94,
+  'raincloud': #858fa2,
+  'shadecloud': #cad1de,
+);
+
+@function getHex($key) {
+  @return map-get($colorHexes, $key)
+}
+
 :root {
     --bazooka: #F4C4C6;
     --mintfoam: #81CA9C;
@@ -103,7 +121,6 @@ body {
 .cc-intro--title {
     user-select: none;
 }
-
 
 .cc-section {
     h1, h2, h3, h4 {
