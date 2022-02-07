@@ -1,3 +1,4 @@
+- remove contact form
 - update homepage with rsvp link
 - update covid banner & nav with rsvp link
 - update registry page with links to $$ & zola

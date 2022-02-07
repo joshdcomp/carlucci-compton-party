@@ -330,6 +330,11 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
     )
   }
 
+  const isPipeline = typeof window === 'undefined'
+
+  console.log(process.env)
+  console.log(isPipeline)
+
   const renderFields = (renderAllFields) => {
     return FormConfig[FormStates.enabled].fieldsets.map(({ title, fields, displayWhen }, i) => {
       const doShow = renderAllFields || (typeof displayWhen === 'boolean')
@@ -386,7 +391,7 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
         {greeting}
         {errorMessage()}
 
-        {renderFields(typeof window === 'undefined')}
+        {renderFields(isPipeline)}
 
         <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="cc-party-rsvp" />
