@@ -332,16 +332,13 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
 
   const isPipeline = typeof window === 'undefined'
 
-  console.log(process.env)
-  console.log(isPipeline)
-
   const renderFields = (renderAllFields) => {
     return FormConfig[FormStates.enabled].fieldsets.map(({ title, fields, displayWhen }, i) => {
-      const doShow = renderAllFields || (typeof displayWhen === 'boolean')
+      let doShow = (typeof displayWhen === 'boolean')
         ? displayWhen
         : true
 
-      return doShow
+      return renderAllFields || doShow
         ? (
             <fieldset
               disabled={formState === FormStates.submitting}
@@ -353,11 +350,11 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
               </legend>
 
               {fields.map(({ displayWhen, ...props}, i) => {
-                const doShow = renderAllFields || (typeof displayWhen === 'boolean')
+                const doShow = (typeof displayWhen === 'boolean')
                   ? displayWhen
                   : true
 
-                return doShow
+                return renderAllFields || doShow
                   ? <FieldInput key={`${props.label || props.keySeed}${i}`} {...props} />
                   : null
               })}
