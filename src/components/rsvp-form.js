@@ -363,17 +363,7 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
   }
 
   return (
-    <>
-      <form
-        name="cc-party-rsvp"
-        netlify-honeypot="bot-field"
-        data-netlify="true"
-        hidden
-      >
-        {renderFields(true)}
-      </form>
-
-      <form
+    <form
         name="cc-party-rsvp"
         method="post"
         netlify-honeypot="bot-field"
@@ -396,7 +386,7 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
         {greeting}
         {errorMessage()}
 
-        {renderFields(false)}
+        {renderFields(typeof window === 'undefined')}
 
         <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="cc-party-rsvp" />
@@ -412,8 +402,6 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
             : null
         }
       </form>
-
-    </>
   )
 }
 
