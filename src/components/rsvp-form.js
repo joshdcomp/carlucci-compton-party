@@ -330,69 +330,90 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
     )
   }
 
+  const renderFields = (renderAllFields) => {
+    return FormConfig[FormStates.enabled].fieldsets.map(({ title, fields, displayWhen }, i) => {
+      const doShow = renderAllFields || (typeof displayWhen === 'boolean')
+        ? displayWhen
+        : true
+
+      return doShow
+        ? (
+            <fieldset
+              disabled={formState === FormStates.submitting}
+              className='cc-form--fieldset'
+              key={`${title}${i}`}
+            >
+              <legend className="cc-text-header-10 cc-form--legend">
+                {title}
+              </legend>
+
+              {fields.map(({ displayWhen, ...props}, i) => {
+                const doShow = renderAllFields || (typeof displayWhen === 'boolean')
+                  ? displayWhen
+                  : true
+
+                return doShow
+                  ? <FieldInput key={`${props.label || props.keySeed}${i}`} {...props} />
+                  : null
+              })}
+            </fieldset>
+          )
+        : null
+    })
+  }
+
   return (
-    <form
-      name="cc-party-rsvp"
-      method="post"
-      netlify-honeypot="bot-field"
-      data-netlify="true"
-      onSubmit={handleSubmit}
-      ref={formRef}
-      disabled={formState !== FormStates.submitting}
-      className={wrapperClasses}
-    >
-      {
-        FormConfig[FormStates.enabled].title
-          ? (
-            <h2 className="cc-text-header-10">
-              {FormConfig[FormStates.enabled].title}
-            </h2>
-          )
-          : null
-      }
+    <>
+      <form
+        name="cc-party-rsvp"
+        netlify-honeypot="bot-field"
+        data-netlify="true"
+        hidden
+      >
+        {renderFields(true)}
+      </form>
 
-      {greeting}
-      {errorMessage()}
-
-      {FormConfig[FormStates.enabled].fieldsets.map(({ title, fields, displayWhen }, i) => {
-        const doShow = (typeof displayWhen === 'boolean') ? displayWhen : true
-        return doShow
-          ? (
-              <fieldset
-                disabled={formState === FormStates.submitting}
-                className='cc-form--fieldset'
-                key={`${title}${i}`}
-              >
-                <legend className="cc-text-header-10 cc-form--legend">
-                  {title}
-                </legend>
-
-                {fields.map(({ displayWhen, ...props}, i) => {
-                  const doShow = (typeof displayWhen === 'boolean') ? displayWhen : true
-
-                  return doShow
-                    ? <FieldInput key={`${props.label || props.keySeed}${i}`} {...props} />
-                    : null
-                })}
-              </fieldset>
+      <form
+        name="cc-party-rsvp"
+        method="post"
+        netlify-honeypot="bot-field"
+        data-netlify="true"
+        onSubmit={handleSubmit}
+        ref={formRef}
+        disabled={formState !== FormStates.submitting}
+        className={wrapperClasses}
+      >
+        {
+          FormConfig[FormStates.enabled].title
+            ? (
+              <h2 className="cc-text-header-10">
+                {FormConfig[FormStates.enabled].title}
+              </h2>
             )
-          : null
-      })}
+            : null
+        }
 
-      <input type="hidden" name="bot-field" />
-      <input type="hidden" name="form-name" value="cc-party-rsvp" />
-      {
-        [AttendingTypes.attending, AttendingTypes.not_attending].includes(attendingType)
-          ? (
-            <button
-              type="submit"
-              className="cc-form--button cc-clip cc-clip-2 cc-bg-sol_lewet"
-              disabled={[FormStates.submitting, FormStates.success].includes(formState)}
-            >Send</button>
-          )
-          : null
-      }
-    </form>
+        {greeting}
+        {errorMessage()}
+
+        {renderFields(false)}
+
+        <input type="hidden" name="bot-field" />
+        <input type="hidden" name="form-name" value="cc-party-rsvp" />
+        {
+          [AttendingTypes.attending, AttendingTypes.not_attending].includes(attendingType)
+            ? (
+              <button
+                type="submit"
+                className="cc-form--button cc-clip cc-clip-2 cc-bg-sol_lewet"
+                disabled={[FormStates.submitting, FormStates.success].includes(formState)}
+              >Send</button>
+            )
+            : null
+        }
+      </form>
+
+    </>
   )
 }
 
