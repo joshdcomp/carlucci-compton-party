@@ -262,7 +262,7 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
     const formData = new FormData(formRef.current)
     setFormState(FormStates.submitting)
 
-    console.log(formData.entries())
+    console.log(Object.fromEntries(formData))
     try {
       const res = await axios.post(
         '/',
