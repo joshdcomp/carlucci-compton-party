@@ -355,7 +355,7 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
                   : true
 
                 return renderAllFields || doShow
-                  ? <FieldInput key={`${props.label || props.keySeed}${i}`} {...props} />
+                  ? <FieldInput key={`${props.label || props.keySeed}${i}`} renderAllFields={renderAllFields} {...props} />
                   : null
               })}
             </fieldset>

@@ -3,8 +3,11 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { PersonAdd, PersonRemove } from './icons'
 
-const InputString = ({ label, fieldName, optional=false, multiple=0, onSelect=() => {}}) => {
-  const [ fields, setFields ] = useState([])
+const InputString = ({ label, fieldName, renderAllFields, optional=false, multiple=0, onSelect=() => {}}) => {
+  const initialState = renderAllFields
+    ? Array.from({length: multiple}, () => '')
+    : []
+  const [ fields, setFields ] = useState(initialState)
 
   const handleChange = (e) => {
     onSelect(e.target.value)
