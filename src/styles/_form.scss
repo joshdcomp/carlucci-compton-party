@@ -94,6 +94,16 @@
     color: white;
     border: none;
     cursor: pointer;
+
+    &[type="submit"] {
+      border-radius: 6px;
+      background-color: var(--coral);
+      min-width: 120px;
+
+      &:hover {
+        background-color: lighten(getHex('coral'), 5%);
+      }
+    }
   }
 
   &.cc-form-is_loading {
@@ -148,6 +158,11 @@
       text-align: center;
       margin: 0;
       font-weight: var(--fw-500);
+    }
+
+    input:focus + .cc-form--input_label {
+      outline: 2px auto Highlight;
+      outline: 2px auto -webkit-focus-ring-color;
     }
   }
 
