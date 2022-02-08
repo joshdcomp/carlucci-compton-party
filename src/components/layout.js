@@ -83,7 +83,6 @@ const Layout = ({ children, contentPage }) => {
               <ShapeCanvas layoutRef={mainEl} reRender={reRender} />
             </div>
           </div>
-          <CovidModal />
           <div ref={modalRef} />
         </ModalContext.Provider>
       </BgContext.Provider>
