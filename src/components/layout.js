@@ -18,7 +18,7 @@ export const ModalContext = createContext({})
 
 const Layout = ({ children, contentPage }) => {
   const bgAssign = (set) => ({ nav: set.shift(), tiles: set })
-  const [ bgs ] = useState(bgAssign(getBGSet(4)))
+  const [ bgs ] = useState(bgAssign(getBGSet(5)))
   const [ reRender, doRerender ] = useState({ hash: Math.random() })
 
   // track the main element

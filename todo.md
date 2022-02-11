@@ -1,6 +1,6 @@
 - [x] remove contact form
 - [x] update covid banner & nav with rsvp link
-- [ ] update homepage with rsvp link
+- [x] update homepage with rsvp link
 - [ ] update registry page with links to $$ & zola
 - [x] update rsvp success state to leverage localstorage
 - [x] update rsvp localstorage state with smarter content
