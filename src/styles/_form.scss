@@ -63,6 +63,11 @@
     border-radius: 4px;
   }
 
+  .cc-form--input_group_control[type="date"] {
+    display:block;
+     -webkit-appearance: textfield;
+  }
+
   .cc-form--input_group_control[type="date"]::-webkit-calendar-picker-indicator {
     margin: 0;
   }
