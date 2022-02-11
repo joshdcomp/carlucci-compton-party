@@ -43,6 +43,7 @@ $colorHexes: (
 
     --fs-body-20: #{type-scale(6)};
     --fs-body-10: #{type-scale(4)};
+    --fs-body-5: #{type-scale(2)};
 
     @media screen and (min-width: 600px) {
         --fs-header-30: #{type-scale(10)};
@@ -112,6 +113,7 @@ body {
     border-radius: 15px 10px;
     color: white;
     border: solid 2px white;
+    cursor: pointer;
 }
 
 .cc-page_break {
@@ -165,6 +167,14 @@ body {
 .cc-util-margin-right-1 {
     display: inline-block;
     margin-right: 8px;
+}
+
+.cc-util-margin-bottom-3 {
+    margin-bottom: 30px;
+}
+
+.cc-util-margin-top-200 {
+    margin-top: 200px;
 }
 
 .cc-util-margin-vert-2 {

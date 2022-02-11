@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import classnames from 'classnames'
 import { ChevronUp, ChevronDown } from './icons'
+import { Link } from 'gatsby'
 
 const CovidBanner = () => {
     const [ isExpanded, setIsExpanded ] = useState(false)
@@ -12,33 +13,29 @@ const CovidBanner = () => {
         { 'cc-banner-is_open': isExpanded },
     )
     return (
-        <aside className={bannerClasses}>
-            <div className="cc-banner--inner">
-                <h1
-                    className="cc-banner--title"
-                    onClick={() => {setIsExpanded(!isExpanded)}}
-                    onKeyPress={(e) => {e.preventDefault();setIsExpanded(!isExpanded)}}
-                    role="button"
-                    tabIndex="0"
-                >
-                    <i aria-hidden="true" className="cc-banner--title_icon">{chevron}</i>
-                    We have a new date!
-                </h1>
+      <aside className={bannerClasses}>
+        <div className="cc-banner--inner">
+          <h1
+            className="cc-banner--title"
+            onClick={() => { setIsExpanded(!isExpanded) }}
+            onKeyPress={(e) => { e.preventDefault(); setIsExpanded(!isExpanded) }}
+            role="button"
+            tabIndex="0"
+          >
+            <i aria-hidden="true" className="cc-banner--title_icon">{chevron}</i>
+            It's time to RSVP!
+          </h1>
 
+          <p className="cc-banner--message">
+            We want everyone to join us worry-free, and enjoy New York in all its glory!
+            Please make sure everyone is vaccinated and boosted at least 2 weeks before attending!
+          </p>
 
-                <p className="cc-banner--message">
-                  Unfortunately, the ongoing pandemic has forced us to
-                  move our wedding celebration.
-                </p>
-
-                <p className="cc-banner--message">
-                  While things are certainly improving, we want everyone to join us
-                  worry-free, and enjoy New York in all its glory!
-                </p>
-
-
-            </div>
-        </aside>
+          <p className="cc-banner--message">
+            <Link to="/rsvp">RSVP here!</Link>
+          </p>
+        </div>
+      </aside>
     )
 }
 export default CovidBanner

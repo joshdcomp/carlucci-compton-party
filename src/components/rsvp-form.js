@@ -2,9 +2,19 @@ import React, { useState, useRef } from 'react'
 import axios from 'axios'
 import classnames from 'classnames'
 
-import sleep from '../utils/sleep'
-
 import FieldInput, { FieldTypes, RadioTypes } from './field-input'
+
+export const AttendingTypes = {
+  not_answered: 'not_answered',
+  attending: 'attending',
+  not_attending: 'not_attending'
+}
+
+export const VisitingTypes = {
+  not_answered: 'not_answered',
+  visiting: 'visiting',
+  not_visiting: 'not_visiting',
+}
 
 const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
   const FormStates = {
@@ -12,16 +22,6 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
     submitting: 'submitting',
     error: 'error',
     success: 'success'
-  }
-  const AttendingTypes = {
-    not_answered: 'not_answered',
-    attending: 'attending',
-    not_attending: 'not_attending'
-  }
-
-  const VisitingTypes = {
-    visiting: 'visiting',
-    not_visiting: 'not_visiting',
   }
 
   const [ formState, setFormState ] = useState(FormStates.enabled)
@@ -272,7 +272,7 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
 
       console.log('form submitted', res)
       setFormState(FormStates.success)
-      await sleep(3000, onSuccess)
+      onSuccess({attendingType, visitingType})
 
     } catch (error) {
       console.log('form submit error', error)
@@ -366,44 +366,44 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
 
   return (
     <form
-        name="cc-party-rsvp"
-        method="post"
-        netlify-honeypot="bot-field"
-        data-netlify="true"
-        onSubmit={handleSubmit}
-        ref={formRef}
-        disabled={formState !== FormStates.submitting}
-        className={wrapperClasses}
-      >
-        {
-          FormConfig[FormStates.enabled].title
-            ? (
-              <h2 className="cc-text-header-10">
-                {FormConfig[FormStates.enabled].title}
-              </h2>
-            )
-            : null
-        }
+      name="cc-party-rsvp"
+      method="post"
+      netlify-honeypot="bot-field"
+      data-netlify="true"
+      onSubmit={handleSubmit}
+      ref={formRef}
+      disabled={formState !== FormStates.submitting}
+      className={wrapperClasses}
+    >
+      {
+        FormConfig[FormStates.enabled].title
+          ? (
+            <h2 className="cc-text-header-10">
+              {FormConfig[FormStates.enabled].title}
+            </h2>
+          )
+          : null
+      }
 
-        {greeting}
-        {errorMessage()}
+      {greeting}
+      {errorMessage()}
 
-        {renderFields(isPipeline)}
+      {renderFields(isPipeline)}
 
-        <input type="hidden" name="bot-field" />
-        <input type="hidden" name="form-name" value="cc-party-rsvp" />
-        {
-          [AttendingTypes.attending, AttendingTypes.not_attending].includes(attendingType)
-            ? (
-              <button
-                type="submit"
-                className="cc-form--button cc-clip cc-clip-2 cc-bg-sol_lewet"
-                disabled={[FormStates.submitting, FormStates.success].includes(formState)}
-              >Send</button>
-            )
-            : null
-        }
-      </form>
+      <input type="hidden" name="bot-field" />
+      <input type="hidden" name="form-name" value="cc-party-rsvp" />
+      {
+        [AttendingTypes.attending, AttendingTypes.not_attending].includes(attendingType)
+          ? (
+            <button
+              type="submit"
+              className="cc-form--button cc-bg-coral"
+              disabled={[FormStates.submitting, FormStates.success].includes(formState)}
+            >Send!</button>
+          )
+          : null
+      }
+    </form>
   )
 }
 

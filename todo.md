@@ -1,9 +1,10 @@
-- remove contact form
-- update homepage with rsvp link
-- update covid banner & nav with rsvp link
-- update registry page with links to $$ & zola
-- update rsvp success state to leverage localstorage
-- update rsvp localstorage state with smarter content
-  - attending + local >> registry + about us?s
-  - attending + visiting >> registry + travel + about us?
-  - not attending >> registry + about us?
+- [x] remove contact form
+- [x] update covid banner & nav with rsvp link
+- [ ] update homepage with rsvp link
+- [ ] update registry page with links to $$ & zola
+- [x] update rsvp success state to leverage localstorage
+- [x] update rsvp localstorage state with smarter content
+  - [x] attending + local >> registry + about us?s
+  - [x] attending + visiting >> registry + travel + about us?
+  - [x] not attending >> registry + about us?
+  - [x] can't tell >> registry + travel + about us?

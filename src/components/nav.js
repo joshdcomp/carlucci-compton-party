@@ -24,9 +24,9 @@ const Nav = () => {
   }
 
   const navClasses = classnames(
-    'cc-layout--nav cc-nav', 
+    'cc-layout--nav cc-nav',
     {'cc-nav-is_open': navIsOpen},
-    navBg, 
+    navBg,
   )
   return (
     <nav className={navClasses}>
@@ -67,6 +67,13 @@ const Nav = () => {
               getProps={isPartiallyActive}
             >contact</Link>
           </li>
+          <li className="cc-nav--item">
+            <Link
+              to="/rsvp"
+              className="cc-nav--link"
+              getProps={isPartiallyActive}
+            >RSVP!</Link>
+          </li>
         </ul>
 
         <section className={`cc-layout--card cc-layout--card-info`}>
@@ -75,19 +82,25 @@ const Nav = () => {
               <strong>When:</strong>
               <span className="cc-text-strike cc-text-no_wrap cc-util-margin-right-1">{dayjs(old, format).format('MMMM D, YYYY')}</span>
               <wbr />
-              <span className="cc-text-no_wrap">{dayjs(current, format).format('MMMM D, YYYY')}</span>
+              <Link
+                title="RSVP!"
+                className="cc-text-no_wrap cc-util-margin-right-1"
+                to="/rsvp"
+              >
+                {dayjs(current, format).format('MMMM D, YYYY')}
+              </Link>
             </li>
-  
+
             <li className="cc-info_list--li">
               <strong>Where:</strong>
               <span>The Box House Hotel</span>
             </li>
-  
+
             <li className="cc-info_list--li">
               <strong>Who:</strong>
               <span>Michele Carlucci &amp; Josh Compton</span>
             </li>
-  
+
             <li className="cc-info_list--li">
               <strong>What:</strong>
               <span>Party!</span>
