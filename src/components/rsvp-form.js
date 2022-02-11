@@ -49,7 +49,7 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
           value: AttendingTypes.attending,
         },
         {
-          label: `Unfortunately no :(`,
+          label: `Sadly no :(`,
           value: AttendingTypes.not_attending,
         }
       ]
