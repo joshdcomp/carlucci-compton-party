@@ -11,7 +11,6 @@ const IntroTiles = () => {
   return (
     <>
       <div className='cc-tiles'>
-
         <div className={`cc-tiles--tile ${getClipClassName()} ${tiles[0]}`}>
           <Link className="cc-tiles--tile_link" to={`/rsvp`}>
             <span className="cc-tiles--icon"><Sparkle /></span>

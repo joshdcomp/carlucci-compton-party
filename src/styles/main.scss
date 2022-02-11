@@ -114,6 +114,7 @@ body {
     color: white;
     border: solid 2px white;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .cc-page_break {
@@ -136,7 +137,7 @@ body {
         clear: both;
     }
 
-    a:not(.cc-tiles--tile_link-logo):not(.cc-layout--title_home_link):not(.cc-slug_header--link) {
+    a:not(.cc-tiles--tile_link-logo):not(.cc-layout--title_home_link):not(.cc-slug_header--link):not(.cc-button) {
         color: var(--majorelle);
         padding-bottom: 2px;
         text-decoration: none;
@@ -171,6 +172,10 @@ body {
 
 .cc-util-margin-bottom-3 {
     margin-bottom: 30px;
+}
+
+.cc-util-margin-top-3 {
+    margin-top: 30px;
 }
 
 .cc-util-margin-top-200 {
