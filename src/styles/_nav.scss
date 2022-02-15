@@ -4,14 +4,14 @@
     top: -70px;
     right: -40px;
     transform: translate(100px, -90px);
-    
+
     --dimensionTiming: cubic-bezier(0.25, 0.1, 0.25, 1.0);
     --dimensionDuration: 150ms;
-    
-    transition: height var(--dimensionDuration) var(--dimensionTiming), 
+
+    transition: height var(--dimensionDuration) var(--dimensionTiming),
     width var(--dimensionDuration) var(--dimensionTiming),
     transform 150ms ease-in;
-    
+
     @media screen and (min-width: 600px) {
         top: 0;
         right: 0;
@@ -27,7 +27,7 @@
         position: absolute;
         top: 0;
         right: 0;
-        bottom: 0; 
+        bottom: 0;
         left: 0;
         background-color: inherit;
         clip-path: url(#clip-path-blob-1);
@@ -76,7 +76,7 @@
             display: block;
             max-width: 100%;
             max-height: 100%;
-            
+
             path {
                 fill: white;
                 stroke: white;
@@ -95,7 +95,7 @@
 
     .cc-nav--list {
         list-style: none;
-        margin: 0 0 30px;
+        margin: 0 0 20px;
     }
 
     .cc-nav--item {
@@ -108,7 +108,7 @@
             line-height: 1;
             padding: 2px;
 
-            &:hover, 
+            &:hover,
             &.cc-nav--link-is_active {
                 border-bottom: solid thin white;
             }

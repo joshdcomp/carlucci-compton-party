@@ -27,11 +27,7 @@ const CovidBanner = () => {
           </h1>
 
           <p className="cc-banner--message">
-            We want everyone to join us worry free and enjoy New York in all its glory!
-          </p>
-
-          <p className="cc-banner--message">
-            Please make sure everyone in your group is vaccinated & boosted at least 2 weeks before attending!
+            Please make sure everyone in your group is vaccinated &amp; boosted at least 2 weeks before attending!
           </p>
 
           <p className="cc-banner--message">

@@ -10,12 +10,6 @@ export const AttendingTypes = {
   not_attending: 'not_attending'
 }
 
-export const VisitingTypes = {
-  not_answered: 'not_answered',
-  visiting: 'visiting',
-  not_visiting: 'not_visiting',
-}
-
 const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
   const FormStates = {
     enabled: 'enabled',
@@ -27,7 +21,6 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
   const [ formState, setFormState ] = useState(FormStates.enabled)
   const [ errMessage, setErrMessage ] = useState()
   const [ attendingType, setAttendingType ] = useState(AttendingTypes.not_answered)
-  const [ visitingType, setVisitingType ] = useState(VisitingTypes.not_visiting)
 
   const getSuccessMessage = () => {
     return FormConfig[FormStates[formState]][attendingType]
@@ -57,27 +50,33 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
   }
 
   const ContactFieldset = {
-    title: `Great! Who's comin?`,
-    displayWhen: attendingType === AttendingTypes.attending,
+    title: (attendingType === AttendingTypes.attending) ? `Great! Who's comin?` : `Aww ok, who are we crossing off?`,
+    displayWhen: [
+      AttendingTypes.attending,
+      AttendingTypes.not_attending
+    ].includes(attendingType),
     fields: [
       {
         fieldName: `primary_contact_name`,
-        label: `Primary Contact`,
+        label: (attendingType === AttendingTypes.attending) ? `Primary Contact` : `Name`,
         type: FieldTypes.string,
       },
       {
         fieldName: `primary_contact_phone`,
         label: `Phone`,
+        displayWhen: attendingType === AttendingTypes.attending,
         type: FieldTypes.phone,
       },
       {
         fieldName: `primary_contact_email`,
         label: `Email`,
+        displayWhen: attendingType === AttendingTypes.attending,
         type: FieldTypes.email,
       },
       {
         fieldName: `contact_guests`,
         label: `Additional guests`,
+        displayWhen: attendingType === AttendingTypes.attending,
         type: FieldTypes.string,
         multiple: 4,
         optional: true,
@@ -85,6 +84,7 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
       {
         fieldName: `contact_vaxed`,
         label: `Is everyone in your group vaccinated & boosted for COVID-19?`,
+        displayWhen: attendingType === AttendingTypes.attending,
         type: FieldTypes.radio,
         colorType: RadioTypes.coral,
         options: [
@@ -148,76 +148,8 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
     ]
   }
 
-  const TravelFieldset = {
-    title: `What's your trip look like?`,
-    displayWhen: attendingType === AttendingTypes.attending,
-    fields: [
-      {
-        fieldName: `travel_visiting`,
-        label: `Are you visiting New York City?`,
-        type: FieldTypes.radio,
-        colorType: RadioTypes.majorelle,
-        onSelect: setVisitingType,
-        options: [
-          {
-            label: `Visiting!`,
-            value: VisitingTypes.visiting,
-          },
-          {
-            label: `Local`,
-            value: VisitingTypes.not_visiting,
-          }
-        ]
-      },
-      {
-        group: true,
-        displayWhen: visitingType === VisitingTypes.visiting,
-        keySeed: "travel_dates",
-        fields: [
-          {
-            fieldName: `travel_date_start`,
-            label: `When are you getting here?`,
-            type: FieldTypes.date,
-            optional: true,
-          },
-          {
-            fieldName: `travel_date_end`,
-            label: `When are you leaving?`,
-            type: FieldTypes.date,
-            optional: true,
-          },
-        ]
-      },
-      {
-        fieldName: `travel_lodging`,
-        label: `Where are you staying?`,
-        type: FieldTypes.string,
-        displayWhen: visitingType === VisitingTypes.visiting,
-        optional: true,
-      },
-      {
-        fieldName: `travel_transport`,
-        label: `Do you need help with transportation?`,
-        type: FieldTypes.radio,
-        colorType: RadioTypes.coral,
-        options: [
-          {
-            label: `Yes`,
-            value: 'yes',
-          },
-          {
-            label: `No`,
-            value: 'no',
-          }
-        ],
-        displayWhen: visitingType === VisitingTypes.visiting,
-        optional: true,
-      },
-    ]
-  }
-
   const AdviceFieldset = {
-    title: (attendingType === AttendingTypes.attending) ? `Any advice?` : `Aww ok, any advice?`,
+    title: `Any advice?`,
     displayWhen: [
       AttendingTypes.attending,
       AttendingTypes.not_attending
@@ -225,7 +157,7 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
     fields: [
       {
         fieldName: `marriage_advice`,
-        label: `We wanna go the distance! How do we get there?`,
+        label: `We want our marriage to last a lifetime! How do we get there?`,
         type: FieldTypes.textarea,
         optional: true,
       }
@@ -238,7 +170,6 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
         AttendingFieldset,
         ContactFieldset,
         WeddingDayFieldset,
-        TravelFieldset,
         AdviceFieldset,
       ],
     },
@@ -272,7 +203,7 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
 
       console.log('form submitted', res)
       setFormState(FormStates.success)
-      onSuccess({attendingType, visitingType})
+      onSuccess({ attendingType })
 
     } catch (error) {
       console.log('form submit error', error)

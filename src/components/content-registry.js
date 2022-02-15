@@ -20,7 +20,7 @@ const RegistryContent = () => {
             />
 
             <p>
-              Thanks so much for thinking of us! We'd be extatic if you'd pitch in to help send us on our honeymoon or buy our first home.
+              Thanks so much for thinking of us! We'd be so grateful if you'd pitch in to help send us on our honeymoon or buy our first home.
             </p>
 
             <ul className="cc-tiles">

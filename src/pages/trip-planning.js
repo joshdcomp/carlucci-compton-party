@@ -26,14 +26,14 @@ const TripPlanning = () => {
         <section className="cc-section">
 
           <PageTitle
-            title="Trip planning"
+            title="Travel"
           />
 
           <SlugHeader
             title="Getting to the City"
             header="h2"
           />
-          
+
           <SlugHeader
             title="Fly"
             header="h3"
@@ -55,7 +55,7 @@ const TripPlanning = () => {
           </p>
 
           <p><strong>Note:</strong> We’re in uncertain times, we suggest buying refundable tickets.</p>
-          
+
           <SlugHeader
             title="Road trip"
             header="h3"
@@ -142,66 +142,17 @@ const TripPlanning = () => {
             Guesthouse (10-minute walk or 5-minute drive); &amp; the apartment-style Habitat 101 Brooklyn
             (10-minute drive).
           </p>
-          
+
+          <p>
+            Below is a map with nearby hotels:
+          </p>
+
           <MapEmbed
             title="Other hotels near the Box House Hotel"
             embed="https://www.google.com/maps/d/u/0/embed?mid=1LCtuZmW9_Lg26BNnKBqVSLyut3dIZJr7"
             href="https://www.google.com/maps/d/viewer?mid=1LCtuZmW9_Lg26BNnKBqVSLyut3dIZJr7"
           />
 
-        </section>
-
-        <section className="cc-section">
-
-          <SlugHeader
-            title="Wedding day!"
-            header="h1"
-          />
-
-          <SlugHeader
-            title="Getting to the venue"
-            header="h2"
-          />
-          <SlugHeader
-            title="Cab/Lyft"
-            header="h3"
-          />
-          <p>
-            Lyft credits will be available to bring you to &amp; from the venue if you are staying anywhere within
-            the five boroughs. Make somebody else drive, we wanna party with you!
-          </p>
-
-          <SlugHeader
-            title="Drive"
-            header="h3"
-          />
-          <p>
-            If you gotta drive yourself, street parking in the area is technically available…but not guaranteed.
-            A better plan is probably to use one of the garages (see the map) within a few minutes walk of the
-            venue.
-          </p>
-
-          <MapEmbed
-            title="Parking near the Box House Hotel"
-            embed="https://www.google.com/maps/d/u/0/embed?mid=1-ftYQ4mWcO4ss9WLmj8WA7gJVMyFmaPj"
-            href="https://www.google.com/maps/d/viewer?mid=1-ftYQ4mWcO4ss9WLmj8WA7gJVMyFmaPj"
-          />
-
-          <SlugHeader
-            title="Public transit"
-            header="h3"
-          />
-          <p>
-            While we’re hoping buses &amp; subways will be a viable way of getting to the venue by May 2021,
-            transit options in Greenpoint are still a little limited. Coming from South Brooklyn, you’re
-            looking at a mix of the G train &amp; the B43 bus. Ask Michele &amp; Josh for transit tips!
-          </p>
-
-          <MapEmbed
-            title="Public transit near the Box House Hotel"
-            embed="https://www.google.com/maps/d/u/0/embed?mid=10tgvgGV0B6huTz8s12IsoapfiG160VsR"
-            href="https://www.google.com/maps/d/viewer?mid=10tgvgGV0B6huTz8s12IsoapfiG160VsR"
-          />
         </section>
       </Layout>
     </>

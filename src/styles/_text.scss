@@ -52,7 +52,8 @@ strong {
     font-weight: var(--fw-200);
 }
 
-.cc-text-body-10 {
+.cc-text-body-10,
+.cc-section .cc-text-body-10 {
     font-size: var(--fs-body-10);
     font-weight: var(--fw-200);
 }
@@ -60,6 +61,11 @@ strong {
 .cc-text-body-5 {
     font-size: var(--fs-body-5);
     font-weight: var(--fw-200);
+}
+
+.cc-section .cc-text-body-5 {
+  font-size: 1rem;
+  margin: 0 0 5px;
 }
 
 .cc-text-color-white {
@@ -73,4 +79,8 @@ strong {
 .cc-text-full_width {
   max-width: none;
   width: 100%;
+}
+
+.cc-text-no_decoration {
+  text-decoration: none;
 }

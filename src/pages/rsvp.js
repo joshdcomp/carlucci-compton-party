@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageTitle from "../components/page-title"
 
-import RsvpForm, { AttendingTypes, VisitingTypes } from '../components/rsvp-form'
+import RsvpForm, { AttendingTypes } from '../components/rsvp-form'
 
 import getClipClassName from '../utils/get-clip-classname'
 import useBgSet from '../utils/use-bg-set'
@@ -37,46 +37,24 @@ const Tiles = ({ t }) => {
 
 const RSVP = () => {
   const attendingInit = AttendingTypes.not_answered
-  const visitingInit = VisitingTypes.not_answered
 
   const [hasSubmitted, setHasSubmitted] = useLocalStorage('has_submitted_rsvp', false)
   const [attendingStatus, setAttendingType] = useLocalStorage('is_attending', attendingInit)
-  const [visitingStatus, setVisitingType] = useLocalStorage('is_visiting', visitingInit)
   const [formShowing, setFormShowing] = useState(!hasSubmitted)
 
-  const handleSuccess = ({attendingType, visitingType}) => {
+  const handleSuccess = ({ attendingType }) => {
     setFormShowing(false)
     setAttendingType(attendingType)
-    setVisitingType(visitingType)
     setHasSubmitted(true)
   }
   const doResetForm = () => {
     setFormShowing(true)
     setAttendingType(attendingInit)
-    setVisitingType(visitingInit)
     setHasSubmitted(false)
   }
 
   const messages = {
-    attendingLocal: {
-      title: `Thanks for your RSVP!`,
-      content: (<>
-        <p>Yay! We can't wait to party with you!</p>
-      </>),
-      tiles: [
-        {
-          title: 'About us',
-          href: '/about-us',
-          Icon: AboutUs,
-        },
-        {
-          title: 'Registry',
-          href: '/registry',
-          Icon: Registry,
-        },
-      ]
-    },
-    attendingVisitor: {
+    attending: {
       title: `Thanks for your RSVP!`,
       content: (<>
         <p>We can't wait to see you! Make sure to check out our <Link to="/trip-planning">trip info</Link> page for travel, hotel, and wedding day resources!</p>
@@ -117,42 +95,12 @@ const RSVP = () => {
         },
       ]
     },
-    default: {
-      title: `Uhh`,
-      content: (<>
-        <p>this site uses your browser's localstorage...if you've made it here, your rsvp has submitted</p>
-      </>),
-      tiles: [
-        {
-          title: 'About us',
-          href: '/about-us',
-          Icon: AboutUs,
-        },
-        {
-          title: 'Registry',
-          href: '/registry',
-          Icon: Registry,
-        },
-        {
-          title: 'Trip info',
-          href: '/trip-planning',
-          Icon: Planning,
-        },
-      ]
-    },
   }
 
   const getSuccessPage = () => {
-    let rsvpMessage = messages.default
-    if (attendingStatus === AttendingTypes.not_attending) {
-      rsvpMessage = messages.notAttending
-    } else if(attendingStatus === AttendingTypes.attending) {
-      if (visitingStatus === VisitingTypes.visiting) {
-        rsvpMessage = messages.attendingVisitor
-      } else {
-        rsvpMessage = messages.attendingLocal
-      }
-    }
+    let rsvpMessage = (attendingStatus === AttendingTypes.not_attending)
+      ? messages.notAttending
+      : messages.attendingVisitor
 
     return (
       <div className="">
@@ -182,7 +130,7 @@ const RSVP = () => {
       <Layout contentPage>
         <section className="cc-section">
           <PageTitle
-            title="RSVP for our wedding!"
+            title={<>RSVP for our <br className="cc-util-mobile_only" />wedding!</>}
           />
 
           {rsvpForm}

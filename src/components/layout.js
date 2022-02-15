@@ -37,7 +37,7 @@ const Layout = ({ children, contentPage }) => {
 
   // shuffle the svgs
   useEffect(() => {
-    const interval = setInterval(shuffle, 1500)
+    const interval = setInterval(shuffle, 2000)
     return () => { clearInterval(interval)}
   }, [])
 
