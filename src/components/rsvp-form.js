@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react'
+import { Link } from 'gatsby'
 import axios from 'axios'
 import classnames from 'classnames'
 
@@ -113,7 +114,7 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
       },
       {
         fieldName: `party_profile_afterparty`,
-        label: `Are you coming to the afterparty?`,
+        label: (<>Are you coming to <Link to="/schedule#after-party">the afterparty</Link>?</>),
         type: FieldTypes.radio,
         colorType: RadioTypes.mintFoam,
         options: [
@@ -130,7 +131,7 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
       },
       {
         fieldName: `party_profile_brunch`,
-        label: `Will you join us for brunch on Sunday?`,
+        label: (<>Will you join us for <Link to="/schedule#day-after">brunch on Sunday</Link>?</>),
         type: FieldTypes.radio,
         colorType: RadioTypes.solLewet,
         options: [
