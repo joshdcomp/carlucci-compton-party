@@ -100,7 +100,7 @@ const RSVP = () => {
   const getSuccessPage = () => {
     let rsvpMessage = (attendingStatus === AttendingTypes.not_attending)
       ? messages.notAttending
-      : messages.attendingVisitor
+      : messages.attending
 
     return (
       <div className="">
