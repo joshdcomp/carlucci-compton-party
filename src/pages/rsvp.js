@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 
-import { AboutUs, Registry, Planning } from '../components/icons'
+import { AboutUs, Registry, Map } from '../components/icons'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -12,7 +12,6 @@ import RsvpForm, { AttendingTypes } from '../components/rsvp-form'
 import getClipClassName from '../utils/get-clip-classname'
 import useBgSet from '../utils/use-bg-set'
 import useLocalStorage from '../utils/use-local-storage'
-// import useWeddingDate from '../utils/use-wedding-date'
 
 import "../styles/main.scss"
 
@@ -57,7 +56,7 @@ const RSVP = () => {
     attending: {
       title: `Thanks for your RSVP!`,
       content: (<>
-        <p>We can't wait to see you! Make sure to check out our <Link to="/trip-planning">trip info</Link> page for travel, hotel, and wedding day resources!</p>
+        <p>We can't wait to party with you! Make sure to check out our <Link to="/trip-planning">trip info</Link> page for travel, hotel, and wedding day resources!</p>
       </>),
       tiles: [
         {
@@ -71,9 +70,9 @@ const RSVP = () => {
           Icon: Registry,
         },
         {
-          title: 'Trip info',
+          title: 'Travel',
           href: '/trip-planning',
-          Icon: Planning,
+          Icon: Map,
         },
       ]
     },
