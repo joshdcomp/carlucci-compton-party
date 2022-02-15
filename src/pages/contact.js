@@ -5,30 +5,13 @@ import SEO from "../components/seo"
 import PageTitle from '../components/page-title'
 import SlugHeader from '../components/slug-header'
 import CopyTooltip from '../components/copy-tooltip'
-import ContactForm from '../components/contact-form'
 
 import formatPhoneNumber from '../utils/format-phone'
-import useLocalStorage from '../utils/use-local-storage'
 
 const Contact = () => {
   const ourPhone = '‪9293240223‬'
   const ourEmail = 'carluccicomptonparty@gmail.com'
   const boxHousePhone = '7183833800'
-
-  const [ hasSubmittedEmail, setHasSubmittedEmail ] = useLocalStorage('has_submitted_email', false)
-  const [ formShowing, setFormShowing ] = useState(!hasSubmittedEmail)
-  const handleSuccess = () => {
-    setFormShowing(false)
-    setHasSubmittedEmail(true)
-  }
-
-  const contactForm = formShowing
-    ? (<ContactForm
-        onSuccess={handleSuccess}
-        successMessage="This box will close in a few seconds."
-
-      />)
-    : null
 
   return (
     <>
@@ -65,10 +48,8 @@ const Contact = () => {
             header="h3"
           />
 
-          {contactForm}
-
           <p>
-            We've also set up a special email inbox for wedding stuff, send us notes &amp; photos!&nbsp;
+            We've set up a special email inbox for wedding stuff, send us notes &amp; photos!&nbsp;
             <CopyTooltip copyText={ourEmail}>
               <a href={`mailto://${ourEmail}`}>{ourEmail}</a>
             </CopyTooltip>
