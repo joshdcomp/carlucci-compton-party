@@ -7,8 +7,8 @@
     position: fixed;
     min-height: 25px;
     min-width: 25px;
-    // pointer-events: none;
-    
+    pointer-events: none;
+
     &.cc-shapes--shape-above_main {
         z-index: var(--z-above_content);
     }
@@ -73,7 +73,7 @@ $colors: (
             .sg-shapes--shape_color_1 {
                 fill: var(--#{$color})
             }
-    
+
             .sg-shapes--shape_color_2 {
                 fill: var(--#{$secondaryColor})
             }
