@@ -7,43 +7,43 @@
     position: relative;
     margin-top: 50px;
     flex-wrap: wrap;
-    
+
     @media screen and (min-width: 600px) {
         flex-wrap: no-wrap;
     }
-    
+
     * {
         color: white;
     }
-    
+
     > .cc-tiles--tile {
-        margin: 0 0 30px; 
+        margin: 0 0 30px;
         line-height: 1;
         flex: 1 1 100%;
         transform: scale(1);
-        
+
         --transformDuration: 90ms;
         --transformTiming: cubic-bezier(0.25, 0.1, 0.25, 1.0);
         transition: transform var(--transformDuration) var(--transformTiming);
-        
+
         @media screen and (min-width: 600px) {
             flex: 1;
-            margin: 0; 
+            margin: 0;
         }
 
         &:hover {
             transform: scale(1.08)
         }
-        
+
         @at-root .cc-layout-is_keyboarding a:focus {
             transform: scale(1.08)
         }
-        
+
         &:active {
             transform: scale(1.06)
         }
     }
-    
+
     @media screen and (min-width: 600px) {
         .cc-tiles--tile + .cc-tiles--tile {
             margin-left: 30px;
@@ -71,6 +71,8 @@
     }
 
     .cc-tiles--title {
+        margin-left: auto;
+        margin-right: auto;
         margin-bottom: 30px;
     }
 

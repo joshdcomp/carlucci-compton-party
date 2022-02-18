@@ -18,7 +18,7 @@ export const ModalContext = createContext({})
 
 const Layout = ({ children, contentPage }) => {
   const bgAssign = (set) => ({ nav: set.shift(), tiles: set })
-  const [ bgs ] = useState(bgAssign(getBGSet(4)))
+  const [ bgs ] = useState(bgAssign(getBGSet(6)))
   const [ reRender, doRerender ] = useState({ hash: Math.random() })
 
   // track the main element
@@ -37,7 +37,7 @@ const Layout = ({ children, contentPage }) => {
 
   // shuffle the svgs
   useEffect(() => {
-    const interval = setInterval(shuffle, 1500)
+    const interval = setInterval(shuffle, 2000)
     return () => { clearInterval(interval)}
   }, [])
 
@@ -83,7 +83,6 @@ const Layout = ({ children, contentPage }) => {
               <ShapeCanvas layoutRef={mainEl} reRender={reRender} />
             </div>
           </div>
-          <CovidModal />
           <div ref={modalRef} />
         </ModalContext.Provider>
       </BgContext.Provider>

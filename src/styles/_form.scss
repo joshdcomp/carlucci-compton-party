@@ -1,6 +1,10 @@
 .cc-form {
   padding: 30px;
 
+  &.cc-form-full_page {
+    padding: 0;
+  }
+
   @media screen and (min-width: 600px) {
     padding: 60px;
   }
@@ -12,8 +16,43 @@
     min-width: 0;
   }
 
+  .cc-form--group_2_col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+
+    @media screen and (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .cc-form--group_col {
+    max-width: 100%;
+  }
+
+  .cc-form--input_group {
+    display: block;
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  .cc-form--legend {
+    margin-top: 35px;
+    padding-top: 20px;//silly margin collapsing
+  }
+
+  .cc-form--legend + .cc-form--input_group {
+    margin-top: 10px;
+  }
+
+  .cc-form--input_group_compact {
+    margin-top: 10px;
+  }
+
   .cc-form--input_group_label {
     display: block;
+    font-size: 1rem;
+    font-weight: var(--fw-500);
   }
 
   .cc-form--input_group_control {
@@ -22,6 +61,30 @@
     padding: 10px 20px;
     border: solid thin var(--raincloud);
     border-radius: 4px;
+  }
+
+  .cc-form--input_group_control[type="date"] {
+    display:block;
+     -webkit-appearance: textfield;
+     min-height: 45px;
+  }
+
+  .cc-form--input_group_control[type="date"]::-webkit-calendar-picker-indicator {
+    margin: 0;
+  }
+
+  textarea.cc-form--input_group_control {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .cc-form--input_layout {
+    display: flex;
+  }
+
+  .cc-form--input_layout_item {
+    flex: 1 0;
+    position: relative;
   }
 
   .cc-form--error {
@@ -37,6 +100,16 @@
     color: white;
     border: none;
     cursor: pointer;
+
+    &[type="submit"] {
+      border-radius: 6px;
+      background-color: var(--coral);
+      min-width: 120px;
+
+      &:hover {
+        background-color: lighten(getHex('coral'), 5%);
+      }
+    }
   }
 
   &.cc-form-is_loading {
@@ -44,5 +117,130 @@
       cursor: wait;
       opacity: 0.6;
     }
+  }
+
+  .cc-form--input_flex {
+    display: flex;
+  }
+
+  .cc-form--helper_button {
+    display: block;
+    flex-shrink: 0;
+    flex-basis: 50px;
+    margin-left: 7px;
+    appearance: none;
+    border: none;
+    border-radius: 5000px;
+    background-color: var(--mintfoam);
+    color: white;
+    padding: 12px;
+    cursor: pointer;
+    transform: scale(.8);
+
+    &.cc-form--helper_button_sub {
+      transform: scale(.6);
+    }
+
+    &:hover {
+      padding: 10px;
+    }
+
+    svg {
+      display: block;
+      stroke: white;
+    }
+  }
+
+  .cc-form--radio_card {
+    display: block;
+
+    .cc-form--input_label {
+      display: block;
+      width: 100%;
+      padding: 10px 20px;
+      cursor: pointer;
+      border: solid thin white;
+      color: white;
+      text-align: center;
+      margin: 0;
+      font-weight: var(--fw-500);
+    }
+
+    input:focus + .cc-form--input_label {
+      outline: 2px auto Highlight;
+      outline: 2px auto -webkit-focus-ring-color;
+    }
+  }
+
+  .cc-form--input_color-sol_lewet {
+    .cc-form--input_label {
+      background-color: var(--sol_lewet);
+
+      &:hover {
+        background-color: lighten(getHex('sol_lewet'), 5%);
+      }
+    }
+    input:checked + .cc-form--input_label {
+      background: darken(getHex('sol_lewet'), 8%);
+    }
+  }
+
+  .cc-form--input_color-coral {
+    .cc-form--input_label {
+      background-color: var(--coral);
+
+      &:hover {
+        background-color: lighten(getHex('coral'), 5%);
+      }
+    }
+
+    input:checked + .cc-form--input_label {
+      background: darken(getHex('coral'), 8%);
+    }
+  }
+
+  .cc-form--input_color-mintfoam {
+    .cc-form--input_label {
+      background-color: var(--mintfoam);
+
+      &:hover {
+        background-color: lighten(getHex('mintfoam'), 5%);
+      }
+    }
+
+    input:checked + .cc-form--input_label {
+      background: darken(getHex('mintfoam'), 8%);
+    }
+  }
+
+  .cc-form--input_color-majorelle {
+    .cc-form--input_label {
+      background-color: var(--majorelle);
+
+      &:hover {
+        background-color: lighten(getHex('majorelle'), 5%);
+      }
+    }
+
+    input:checked + .cc-form--input_label {
+      background: darken(getHex('majorelle'), 8%);
+    }
+  }
+
+  li:first-child .cc-form--input_label {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+
+  li:last-child .cc-form--input_label {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+
+  .cc-form--radio_card_input {
+    // visibility: collapse;
+    opacity: 0;
+    position: absolute;
+    z-index: 0;
   }
 }

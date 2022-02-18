@@ -13,7 +13,7 @@ import useWeddingDate from '../utils/use-wedding-date'
 const Nav = () => {
   const [ navIsOpen, setNavOpen ] = useState(false)
   const { nav:navBg } = useBgSet()
-  const { old, current, format } = useWeddingDate()
+  const { current, format } = useWeddingDate()
 
   const isPartiallyActive = ({
     isPartiallyCurrent
@@ -24,9 +24,9 @@ const Nav = () => {
   }
 
   const navClasses = classnames(
-    'cc-layout--nav cc-nav', 
+    'cc-layout--nav cc-nav',
     {'cc-nav-is_open': navIsOpen},
-    navBg, 
+    navBg,
   )
   return (
     <nav className={navClasses}>
@@ -41,17 +41,16 @@ const Nav = () => {
         <ul className="cc-nav--list">
           <li className="cc-nav--item">
             <Link
-              to="/about-us"
+              to="/"
               className="cc-nav--link"
-              getProps={isPartiallyActive}
-            >about us</Link>
+            >home</Link>
           </li>
           <li className="cc-nav--item">
             <Link
               to="/trip-planning"
               className="cc-nav--link"
               getProps={isPartiallyActive}
-            >trip planning</Link>
+            >travel</Link>
           </li>
           <li className="cc-nav--item">
             <Link
@@ -67,27 +66,52 @@ const Nav = () => {
               getProps={isPartiallyActive}
             >contact</Link>
           </li>
+          <li className="cc-nav--item">
+            <Link
+              to="/rsvp"
+              className="cc-nav--link"
+              getProps={isPartiallyActive}
+            >RSVP!</Link>
+          </li>
         </ul>
 
         <section className={`cc-layout--card cc-layout--card-info`}>
           <ul className="cc-info_list">
             <li className="cc-info_list--li">
-              <strong>When:</strong>
-              <span className="cc-text-strike cc-text-no_wrap cc-util-margin-right-1">{dayjs(old, format).format('MMMM D, YYYY')}</span>
+              <strong>When:</strong>&nbsp;
+              <Link
+                title="Schedule!"
+                className="cc-text-no_wrap cc-util-margin-right-1 cc-text-no_decoration"
+                to="/schedule"
+              >
+                {dayjs(current, format).format('MMMM D, YYYY')}
+              </Link>
               <wbr />
-              <span className="cc-text-no_wrap">{dayjs(current, format).format('MMMM D, YYYY')}</span>
+              (<Link
+                title="Schedule!"
+                className="cc-text-no_wrap cc-nav--link"
+                getProps={isPartiallyActive}
+                to="/schedule"
+              >full schedule</Link>)
+
             </li>
-  
+
             <li className="cc-info_list--li">
               <strong>Where:</strong>
               <span>The Box House Hotel</span>
             </li>
-  
+
             <li className="cc-info_list--li">
               <strong>Who:</strong>
-              <span>Michele Carlucci &amp; Josh Compton</span>
+              <span>
+                <Link
+                  to="/about-us"
+                  className="cc-text-no_wrap"
+                  getProps={isPartiallyActive}
+                >Michele Carlucci &amp; Josh Compton</Link>
+              </span>
             </li>
-  
+
             <li className="cc-info_list--li">
               <strong>What:</strong>
               <span>Party!</span>

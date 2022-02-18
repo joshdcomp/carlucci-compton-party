@@ -4,6 +4,24 @@
 @import "./util/convert";
 @import "./util/remove";
 
+$colorHexes: (
+  'bazooka': #F4C4C6,
+  'mintfoam': #81CA9C,
+  'majorelle': #007AC0,
+  'coral': #F37444,
+  'heinz': #F15F68,
+  'sol_lewit': #A4DDEB,
+  'sol_lewet': #8CC7ED,
+  'neon': #FFF200,
+  'slate': #737e94,
+  'raincloud': #858fa2,
+  'shadecloud': #cad1de,
+);
+
+@function getHex($key) {
+  @return map-get($colorHexes, $key)
+}
+
 :root {
     --bazooka: #F4C4C6;
     --mintfoam: #81CA9C;
@@ -25,11 +43,14 @@
 
     --fs-body-20: #{type-scale(6)};
     --fs-body-10: #{type-scale(4)};
+    --fs-body-7: #{type-scale(3)};
+    --fs-body-5: #{type-scale(2)};
 
     @media screen and (min-width: 600px) {
         --fs-header-30: #{type-scale(10)};
         --fs-header-20: #{type-scale(8)};
         --fs-header-10: #{type-scale(6)};
+        --fs-body-7: #{type-scale(5)};
         --fs-header-5: #{type-scale(5)};
         --fs-header-1: #{type-scale(4)};
 
@@ -94,6 +115,8 @@ body {
     border-radius: 15px 10px;
     color: white;
     border: solid 2px white;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .cc-page_break {
@@ -103,7 +126,6 @@ body {
 .cc-intro--title {
     user-select: none;
 }
-
 
 .cc-section {
     h1, h2, h3, h4 {
@@ -117,7 +139,7 @@ body {
         clear: both;
     }
 
-    a:not(.cc-tiles--tile_link-logo):not(.cc-layout--title_home_link):not(.cc-slug_header--link) {
+    a:not(.cc-tiles--tile_link-logo):not(.cc-layout--title_home_link):not(.cc-slug_header--link):not(.cc-button) {
         color: var(--majorelle);
         padding-bottom: 2px;
         text-decoration: none;
@@ -150,9 +172,27 @@ body {
     margin-right: 8px;
 }
 
+.cc-util-margin-bottom-3 {
+    margin-bottom: 30px;
+}
+
+.cc-util-margin-top-3 {
+    margin-top: 30px;
+}
+
+.cc-util-margin-top-200 {
+    margin-top: 200px;
+}
+
 .cc-util-margin-vert-2 {
   margin-top: 25px;
   margin-bottom: 25px;
+}
+
+.cc-util-mobile_only {
+  @media screen and (min-width: 600px)  {
+    display: none;
+  }
 }
 
 .cc-text-no_wrap {
