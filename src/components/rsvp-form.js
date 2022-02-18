@@ -51,7 +51,7 @@ const RsvpForm = ({onSuccess=()=>{}, successMessage, greetingMessage}) => {
   }
 
   const ContactFieldset = {
-    title: (attendingType === AttendingTypes.attending) ? `Great! Who's comin?` : `Aww ok, who are we crossing off?`,
+    title: (attendingType === AttendingTypes.attending) ? `Great! Who's coming?` : `Aww ok, who are we crossing off?`,
     displayWhen: [
       AttendingTypes.attending,
       AttendingTypes.not_attending
