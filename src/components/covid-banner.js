@@ -23,7 +23,7 @@ const CovidBanner = () => {
             tabIndex="0"
           >
             <i aria-hidden="true" className="cc-banner--title_icon">{chevron}</i>
-            It's time to RSVP!
+            It's wedding week!!
           </h1>
 
           <p className="cc-banner--message">
@@ -31,7 +31,7 @@ const CovidBanner = () => {
           </p>
 
           <p className="cc-banner--message">
-            <Link to="/rsvp">RSVP here!</Link>
+            <Link to="/schedule">Here's the schedule!</Link>
           </p>
         </div>
       </aside>

@@ -66,13 +66,6 @@ const Nav = () => {
               getProps={isPartiallyActive}
             >contact</Link>
           </li>
-          <li className="cc-nav--item">
-            <Link
-              to="/rsvp"
-              className="cc-nav--link"
-              getProps={isPartiallyActive}
-            >RSVP!</Link>
-          </li>
         </ul>
 
         <section className={`cc-layout--card cc-layout--card-info`}>
