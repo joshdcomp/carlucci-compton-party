@@ -19,6 +19,38 @@ const ScheduleContent = () => {
         />
 
         <SlugHeader
+          title="Wedding Week!"
+          header="h2"
+        />
+
+        <SlugHeader
+          title="Welcome party"
+          header="h3"
+        />
+
+        <p>Come enjoy the calm before the storm with us:</p>
+
+        <p className="cc-text-body-5">
+          <strong>When:</strong>&nbsp;
+          <span
+            className="cc-text-no_wrap"
+          >
+            May 6th, 2022 at 7:30pm
+          </span>
+        </p>
+
+        <p className="cc-text-body-5">
+          <strong>Where:</strong>&nbsp;
+          <span>
+            <a
+              href="https://www.google.com/maps/place/Spritzenhaus33/@40.7232892,-73.9548945,17z/data=!3m2!4b1!5s0x89c2594485b6b8b9:0x3a08baf1126564e8!4m5!3m4!1s0x89c259448f9fe1fd:0xdb8de662ae8f43ca!8m2!3d40.7232892!4d-73.9527058"
+              target="_blank"
+              rel="noreferrer"
+            >Spritzenhaus</a>
+          </span>
+        </p>
+
+        <SlugHeader
           title="Wedding day!"
           header="h2"
         />
@@ -47,22 +79,22 @@ const ScheduleContent = () => {
 
         <p className="cc-text-body-5">
           <strong>When:</strong>&nbsp;
-          <span className="cc-text-no_wrap">After the party...</span>
+          <span className="cc-text-no_wrap">11pm</span>
         </p>
 
         <p className="cc-text-body-5">
           <strong>Where:</strong>&nbsp;
           <span>
             <a
-              href="https://www.google.com/maps/place/Capri+Social+Club/@40.72759,-73.954142,15z/data=!4m5!3m4!1s0x0:0x9f75c9487a9e925f!8m2!3d40.7277089!4d-73.9542096"
+              href="https://www.google.com/maps/place/Grand+Republic+Cocktail+Club/@40.7297776,-73.9621953,17z/data=!3m1!4b1!4m5!3m4!1s0x89c2596a86bedb3d:0x78c5366f36d6e03f!8m2!3d40.7297803!4d-73.9600023"
               target="_blank"
               rel="noreferrer"
-            >Capri Social Club</a>
+            >Grand Republic Cocktail Club</a>
           </span>
         </p>
 
         <p className="cc-text-body-10">
-          <strong>We'll have transportation to Capri Social Club from the Box House!</strong>
+          <strong>We'll have transportation to Grand Republic from the Box House!</strong>
         </p>
 
 
@@ -98,7 +130,7 @@ const ScheduleContent = () => {
           header="h2"
         />
         <p>
-          Lyft credits will be available to bring you to &amp; from the venue if you are staying anywhere within
+          Uber credits will be available to bring you to &amp; from the venue if you are staying anywhere within
           the five boroughs. Make somebody else drive, we wanna party with you!
         </p>
 
