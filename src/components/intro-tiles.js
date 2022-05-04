@@ -11,14 +11,6 @@ const IntroTiles = () => {
   return (
     <>
       <ul className="cc-tiles">
-        <li className={`cc-tiles--tile ${getClipClassName()} ${tiles[0]}`}>
-          <Link className="cc-tiles--tile_link" to={`/rsvp`}>
-            <span className="cc-tiles--icon"><Sparkle /></span>
-
-            <h2 className="cc-tiles--title">RSVP!</h2>
-          </Link>
-        </li>
-
         <li className={`cc-tiles--tile ${getClipClassName()} ${tiles[1]}`}>
           <Link className="cc-tiles--tile_link" to={`/schedule`}>
             <span className="cc-tiles--icon"><Planning /></span>
