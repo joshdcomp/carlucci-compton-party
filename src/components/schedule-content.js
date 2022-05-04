@@ -138,8 +138,12 @@ const ScheduleContent = () => {
           title="Drive"
           header="h2"
         />
+        <p><strong>
+          If you're driving, we'll have a valet service out front!
+        </strong></p>
+
         <p>
-          If you gotta drive yourself, street parking in the area is technically available…but not guaranteed.
+          Street parking in the area isj also technically available…but not guaranteed.
           A better plan is probably to use one of the garages within a few minutes walk of the
           venue.
         </p>
