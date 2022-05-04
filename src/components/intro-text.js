@@ -4,7 +4,7 @@ import dayjs from 'dayjs'
 import useWeddingDate from '../utils/use-wedding-date'
 
 const IntroTiles = () => {
-  
+
   const { old, current, format } = useWeddingDate()
 
   return (
@@ -15,7 +15,7 @@ const IntroTiles = () => {
 
       <p className="cc-text-body-20">We're getting married!</p>
 
-      <p className="cc-text-body-20">Save the date for our wedding celebration:</p>
+      <p className="cc-text-body-20">It's finally here, we can't wait to see you!!</p>
 
       <p className="cc-text-body-10">
         <strong>When:</strong>&nbsp;

@@ -19,7 +19,7 @@ const ScheduleContent = () => {
         />
 
         <SlugHeader
-          title="Wedding Week!"
+          title="Wedding week!"
           header="h2"
         />
 
